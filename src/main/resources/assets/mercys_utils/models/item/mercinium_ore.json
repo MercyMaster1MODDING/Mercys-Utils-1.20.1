@@ -1,6 +1,0 @@
-{
-  "parent": "mercys_utils:block/mercinium_ore",
-  "textures": {
-    "layer0": "mercys_utils:block/mercinium_ore"
-  }
-}

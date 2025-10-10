@@ -18,10 +18,12 @@ public class ModBlocks extends Blocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, MercysUtils.MOD_ID);
 
+    //Register Blocks
     public static final RegistryObject<Block> MERCINIUM_ORE = BLOCKS.register("mercinium_ore",
             () -> new Block(BlockBehaviour.Properties.of()
+                    .requiresCorrectToolForDrops()
                     .mapColor(MapColor.COLOR_LIGHT_BLUE)
-                    .strength(50)
+                    .strength(5)
                     .explosionResistance(1200)));
 
     public static void register(IEventBus eventBus) {
