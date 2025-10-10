@@ -1,5 +1,6 @@
 package com.mercysUtils.library;
 
+import com.mercysUtils.library.Blocks.ModBlocks;
 import com.mercysUtils.library.Items.ModItems;
 import com.mercysUtils.library.MiscRegistries.ModCreativeModeTabsRegistry;
 import com.mojang.logging.LogUtils;
@@ -44,6 +45,7 @@ public class MercysUtils
         IEventBus modEventBus = context.getModEventBus();
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
         ModCreativeModeTabsRegistry.TABS.register(modEventBus);
 
         // Register the commonSetup method for modloading

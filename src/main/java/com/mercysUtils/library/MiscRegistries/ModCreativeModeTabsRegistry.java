@@ -1,5 +1,6 @@
 package com.mercysUtils.library.MiscRegistries;
 
+import com.mercysUtils.library.Blocks.ModBlocks;
 import com.mercysUtils.library.Items.ModItems;
 import com.mercysUtils.library.MercysUtils;
 import net.minecraft.core.registries.Registries;
@@ -22,6 +23,7 @@ public class ModCreativeModeTabsRegistry {
                     .displayItems((itemDisplayParameters, output) -> {
                         //Add items to the tab
                         output.accept(ModItems.RAW_MERCINIUM.get());
+                        output.accept(ModBlocks.MERCINIUM_ORE.get());
                     })
                     .build());
 

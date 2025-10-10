@@ -21,6 +21,11 @@ public class ModBlocks extends Blocks {
     public static final RegistryObject<Block> MERCINIUM_ORE = BLOCKS.register("mercinium_ore",
             () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_LIGHT_BLUE)
-                    .strength(5)
+                    .strength(50)
                     .explosionResistance(1200)));
+
+    public static void register(IEventBus eventBus) {
+        BLOCKS.register(eventBus);
+    }
 }
+
