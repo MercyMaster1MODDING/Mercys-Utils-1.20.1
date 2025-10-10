@@ -1,0 +1,6 @@
+{
+  "parent": "mercysutils:block/mercinium_ore",
+  "textures": {
+    "layer0": "mercysutils:block/mercinium_ore"
+  }
+}
