@@ -4,6 +4,7 @@ import com.mercysUtils.library.MercysUtils;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.TorchBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -25,6 +26,15 @@ public class ModBlocks extends Blocks {
                     .mapColor(MapColor.COLOR_LIGHT_BLUE)
                     .strength(5)
                     .explosionResistance(1200)));
+
+    public static final RegistryObject<Block> JELLYINIUM_ORE = BLOCKS.register("jellyinium_ore",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .requiresCorrectToolForDrops()
+                    .mapColor(MapColor.COLOR_RED)
+                    .strength(5)
+                    .explosionResistance(1200)));
+
+
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

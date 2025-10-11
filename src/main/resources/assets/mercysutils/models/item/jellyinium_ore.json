@@ -1,0 +1,6 @@
+{
+  "parent": "mercysutils:block/jellyinium_ore",
+  "textures": {
+    "layer0": "mercysutils:block/jellyinium_ore"
+  }
+}

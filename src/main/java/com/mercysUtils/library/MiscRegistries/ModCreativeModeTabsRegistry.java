@@ -7,7 +7,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -16,14 +15,26 @@ public class ModCreativeModeTabsRegistry {
     public static final DeferredRegister<CreativeModeTab> TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MercysUtils.MOD_ID);
 
-    public static final RegistryObject<CreativeModeTab> MOD_INGREDIENT_TAB = TABS.register("mercys_ingredients",
+    public static final RegistryObject<CreativeModeTab> MOD_TAB = TABS.register("mercys_utils_tab",
             () -> CreativeModeTab.builder()
-                    .title(Component.translatable("mercys_ingredients"))
+                    .title(Component.translatable( "mercysutils.mercys_utils_tab"))
                     .icon(() -> new ItemStack(ModItems.RAW_MERCINIUM.get()))
                     .displayItems((itemDisplayParameters, output) -> {
                         //Add items to the tab
                         output.accept(ModItems.RAW_MERCINIUM.get());
+                        output.accept(ModItems.RAW_JELLYINIUM.get());
+                        output.accept(ModItems.MERCINIUM_INGOT.get());
+                        output.accept(ModItems.JELLYINIUM_INGOT.get());
                         output.accept(ModBlocks.MERCINIUM_ORE.get());
+                        output.accept(ModBlocks.JELLYINIUM_ORE.get());
+                        output.accept(ModItems.MERCINIUM_SWORD.get());
+                        output.accept(ModItems.MERCINIUM_PICKAXE.get());
+                        output.accept(ModItems.JELLYINIUM_SWORD.get());
+                        output.accept(ModItems.JELLYINIUM_PICKAXE.get());
+                        output.accept(ModItems.MERCINIUM_HELMET.get());
+                        output.accept(ModItems.MERCINIUM_CHESTPLATE.get());
+                        output.accept(ModItems.MERCINIUM_LEGGINGS.get());
+                        output.accept(ModItems.MERCINIUM_BOOTS.get());
                     })
                     .build());
 

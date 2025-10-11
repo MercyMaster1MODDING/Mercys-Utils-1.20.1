@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "mercysutils:raw_mercinium"
+  },
+  "result": "mercysutils:mercinium_ingot",
+  "experience": 10,
+  "cookingtime": 100
+}

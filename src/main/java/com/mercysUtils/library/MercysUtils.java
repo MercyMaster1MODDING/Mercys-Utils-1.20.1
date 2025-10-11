@@ -62,12 +62,12 @@ public class MercysUtils
     {
     }
 
-    // Add the example block item to the building blocks tab
+    // Add the example block item to the vanilla ingredients tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS){
-            event.accept(ModItems.RAW_MERCINIUM);
-        }
+//        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+//            event.accept(ModItems.RAW_MERCINIUM);
+//        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
