@@ -24,14 +24,14 @@ public class ModBlocks extends Blocks {
             () -> new Block(BlockBehaviour.Properties.of()
                     .requiresCorrectToolForDrops()
                     .mapColor(MapColor.COLOR_LIGHT_BLUE)
-                    .strength(5)
+                    .strength(15)
                     .explosionResistance(1200)));
 
     public static final RegistryObject<Block> JELLYINIUM_ORE = BLOCKS.register("jellyinium_ore",
             () -> new Block(BlockBehaviour.Properties.of()
                     .requiresCorrectToolForDrops()
                     .mapColor(MapColor.COLOR_RED)
-                    .strength(5)
+                    .strength(15)
                     .explosionResistance(1200)));
 
 

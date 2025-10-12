@@ -10,7 +10,7 @@ public class ModTiers {
     public static final ForgeTier MERCINIUM_TIER = new ForgeTier(
             5,
             2000,
-            0f,
+            40f,
             0,
             25,
             ModTags.NEEDS_MERCINIUM_TOOL,
