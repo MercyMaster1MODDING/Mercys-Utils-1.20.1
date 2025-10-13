@@ -61,12 +61,12 @@ public class ModDimension {
         NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
                 MultiNoiseBiomeSource.createFromList(
                         new Climate.ParameterList<>(List.of(Pair.of(
-                                        Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.ELVEN_FOREST)),
-                                Pair.of(
-                                        Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(Biomes.BIRCH_FOREST))
+                                        Climate.parameters(0.0F, 0.0F, 0.0F, -2F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.ELVEN_FOREST))
+//                                Pair.of(
+//                                        Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(Biomes.BIRCH_FOREST))
 
                         ))),
-                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.AMPLIFIED));
+                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.OVERWORLD));
 
         LevelStem stem = new LevelStem(dimTypes.getOrThrow(ModDimension.MERCYS_DIMENSION_TYPE), noiseBasedChunkGenerator);
 

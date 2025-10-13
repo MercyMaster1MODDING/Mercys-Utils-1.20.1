@@ -6,6 +6,6 @@ import terrablender.api.Regions;
 
 public class ModTerrablender {
     public static void registerBiomes() {
-        Regions.register(new ModOverworldRegion(new ResourceLocation(MercysUtils.MOD_ID, "overworld"), 5));
+        Regions.register(new ModDimensionRegion(new ResourceLocation(MercysUtils.MOD_ID, "mercys_dimension"), 5));
     }
 }

@@ -1,6 +1,6 @@
 package com.mercysUtils.library.Worldgen.Biomes;
 
-import com.mercysUtils.library.Worldgen.Biomes.ModBiomes;
+import com.mercysUtils.library.Worldgen.Dimension.ModDimension;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
@@ -13,8 +13,9 @@ import terrablender.api.RegionType;
 
 import java.util.function.Consumer;
 
-public class ModOverworldRegion extends Region {
-    public ModOverworldRegion(ResourceLocation name, int weight) {
+public class ModDimensionRegion extends Region {
+
+    public ModDimensionRegion(ResourceLocation name, int weight) {
         super(name, RegionType.OVERWORLD, weight);
     }
 

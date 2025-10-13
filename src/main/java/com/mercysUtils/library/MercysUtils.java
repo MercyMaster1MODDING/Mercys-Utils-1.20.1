@@ -1,11 +1,13 @@
 package com.mercysUtils.library;
 
 import com.mercysUtils.library.Blocks.ModBlocks;
+import com.mercysUtils.library.Enchantments.ModEnchantments;
 import com.mercysUtils.library.Items.ModItems;
 import com.mercysUtils.library.MiscRegistries.ModCreativeModeTabsRegistry;
-import com.mercysUtils.library.Worldgen.Biomes.ModTerrablender;
+import com.mercysUtils.library.Worldgen.Biomes.ModBiomes;
 import com.mercysUtils.library.Worldgen.Dimension.ModDimension;
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -31,11 +33,13 @@ public class MercysUtils
     {
         IEventBus modEventBus = context.getModEventBus();
 
+        ModEnchantments.ENCHANTMENTS.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModCreativeModeTabsRegistry.TABS.register(modEventBus);
-        ModTerrablender.registerBiomes();
+        ModBiomes.ELVEN_FOREST.registry();
         ModDimension.MERCYSDIMENSION.registry();
+
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -45,6 +49,8 @@ public class MercysUtils
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
+
+
 
     }
 

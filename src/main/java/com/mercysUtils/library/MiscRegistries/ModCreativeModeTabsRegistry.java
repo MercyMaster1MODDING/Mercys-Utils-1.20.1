@@ -1,6 +1,9 @@
 package com.mercysUtils.library.MiscRegistries;
 
 import com.mercysUtils.library.Blocks.ModBlocks;
+import com.mercysUtils.library.Enchantments.AdvancedSharpnessEnchantment;
+import com.mercysUtils.library.Enchantments.ModEnchantments;
+import com.mercysUtils.library.FoodItems.ModFoods;
 import com.mercysUtils.library.Items.ModItems;
 import com.mercysUtils.library.MercysUtils;
 import net.minecraft.core.registries.Registries;
@@ -21,20 +24,33 @@ public class ModCreativeModeTabsRegistry {
                     .icon(() -> new ItemStack(ModItems.RAW_MERCINIUM.get()))
                     .displayItems((itemDisplayParameters, output) -> {
                         //Add items to the tab
+
+                        //Ores
                         output.accept(ModItems.RAW_MERCINIUM.get());
                         output.accept(ModItems.RAW_JELLYINIUM.get());
                         output.accept(ModItems.MERCINIUM_INGOT.get());
                         output.accept(ModItems.JELLYINIUM_INGOT.get());
                         output.accept(ModBlocks.MERCINIUM_ORE.get());
                         output.accept(ModBlocks.JELLYINIUM_ORE.get());
+
+                        //Tools
                         output.accept(ModItems.MERCINIUM_SWORD.get());
                         output.accept(ModItems.MERCINIUM_PICKAXE.get());
                         output.accept(ModItems.JELLYINIUM_SWORD.get());
                         output.accept(ModItems.JELLYINIUM_PICKAXE.get());
+
+                        //Armor
                         output.accept(ModItems.MERCINIUM_HELMET.get());
                         output.accept(ModItems.MERCINIUM_CHESTPLATE.get());
                         output.accept(ModItems.MERCINIUM_LEGGINGS.get());
                         output.accept(ModItems.MERCINIUM_BOOTS.get());
+
+                        //Food
+                        output.accept(ModItems.MERCINIUM_APPLE.get());
+
+                        //Enchantments
+                        output.accept(ModItems.ADVANCED_SHARPNESS_BOOK.get());
+
                     })
                     .build());
 
