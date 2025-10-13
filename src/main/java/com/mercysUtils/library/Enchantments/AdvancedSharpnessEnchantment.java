@@ -1,18 +1,20 @@
 package com.mercysUtils.library.Enchantments;
 
+import com.mercysUtils.library.Items.ModItems;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.DamageEnchantment;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraft.world.item.enchantment.Enchantments;
 
 public class AdvancedSharpnessEnchantment extends DamageEnchantment{
     private int level;
     private MobType mobType;
-
     public AdvancedSharpnessEnchantment() {
-        super(Rarity.VERY_RARE, 0, EquipmentSlot.MAINHAND);
+        super(Rarity.VERY_RARE, EnchantmentCategory.WEAPON.ordinal(), EquipmentSlot.MAINHAND);
+
     }
 
     @Override
@@ -51,6 +53,7 @@ public class AdvancedSharpnessEnchantment extends DamageEnchantment{
                 && other != Enchantments.SHARPNESS
                 && other != Enchantments.SMITE
                 && other != Enchantments.BANE_OF_ARTHROPODS;
+
 
     }
 

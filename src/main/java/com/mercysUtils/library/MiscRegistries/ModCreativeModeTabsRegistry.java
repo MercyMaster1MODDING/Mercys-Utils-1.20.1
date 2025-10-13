@@ -10,6 +10,8 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -47,9 +49,11 @@ public class ModCreativeModeTabsRegistry {
 
                         //Food
                         output.accept(ModItems.MERCINIUM_APPLE.get());
+                        output.accept(ModItems.SUPER_MERCINIUM_APPLE.get());
 
                         //Enchantments
-                        output.accept(ModItems.ADVANCED_SHARPNESS_BOOK.get());
+//                        output.accept(ModItems.ADVANCED_SHARPNESS_BOOK.get());
+
 
                     })
                     .build());

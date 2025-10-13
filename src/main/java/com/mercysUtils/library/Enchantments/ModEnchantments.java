@@ -15,6 +15,8 @@ public class ModEnchantments extends Enchantments {
     public static final RegistryObject<Enchantment> ADVANCED_SHARPNESS_ENCHANT =
             ENCHANTMENTS.register("advanced_sharpness", AdvancedSharpnessEnchantment::new);
 
+    public static final RegistryObject<Enchantment> TSUNAMIS_REAP_ENCHANT =
+            ENCHANTMENTS.register("tsunamis_reap", TsunamisReapEnchantment::new);
 
 
 }

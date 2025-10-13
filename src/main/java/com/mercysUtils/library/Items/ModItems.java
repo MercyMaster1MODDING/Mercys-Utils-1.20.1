@@ -4,10 +4,9 @@ import com.mercysUtils.library.Blocks.ModBlocks;
 import com.mercysUtils.library.FoodItems.ModFoods;
 import com.mercysUtils.library.MercysUtils;
 import com.mercysUtils.library.MiscRegistries.ModArmorMaterialRegistry;
-import com.mercysUtils.library.tiers.ModArmorTiers;
 import com.mercysUtils.library.tiers.ModTiers;
-import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -38,9 +37,8 @@ public class ModItems {
             () -> new Item(new Item.Properties().food(ModFoods.SUPER_MERCINIUM_APPLE)));
 
     //Register Enchanted Book Items
-    public static final RegistryObject<EnchantedBookItem> ADVANCED_SHARPNESS_BOOK = ITEMS.register("advanced_sharpness_book",
-            () -> new EnchantedBookItem(new Item.Properties()
-                    .stacksTo(1)));
+//    public static final RegistryObject<EnchantedBookItem> ADVANCED_SHARPNESS_BOOK = ITEMS.register("advanced_sharpness_book",
+//            () -> new EnchantedBookItem(new Item.Properties()));
 
     //Register BlockItems
     public static final RegistryObject<BlockItem> MERCINIUM_ORE = ITEMS.register("mercinium_ore",
