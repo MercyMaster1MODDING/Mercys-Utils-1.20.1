@@ -53,9 +53,6 @@ public class ModItems {
     public static final RegistryObject<BlockItem> MERCINIUM_APPLE_TREE_SAPLING = ITEMS.register("mercinium_apple_tree_sapling",
             () -> new BlockItem(ModBlocks.MERCINIUM_APPLE_TREE_SAPLING.get(), new Item.Properties()));
 
-    public static final RegistryObject<BlockItem> JELLYINIUM_ORE = ITEMS.register("jellyinium_ore",
-            () -> new BlockItem(ModBlocks.JELLYINIUM_ORE.get(), new Item.Properties()));
-
     //Register Tools
     public static final RegistryObject<SwordItem> MERCINIUM_SWORD = ITEMS.register("mercinium_sword",
             () -> new SwordItem(
@@ -86,25 +83,25 @@ public class ModItems {
                     new Item.Properties()));
 
     //Register Armor
-    public static final RegistryObject<ArmorItem> MERCINIUM_HELMET = ITEMS.register("mercinium_helmet",
+    public static final RegistryObject<Item> MERCINIUM_HELMET = ITEMS.register("mercinium_helmet",
             () -> new ArmorItem(
                     ModArmorMaterialRegistry.MERCINIUM,
                     ArmorItem.Type.HELMET,
                     new Item.Properties().rarity(Rarity.EPIC)));
 
-    public static final RegistryObject<ArmorItem> MERCINIUM_CHESTPLATE = ITEMS.register("mercinium_chestplate",
+    public static final RegistryObject<Item> MERCINIUM_CHESTPLATE = ITEMS.register("mercinium_chestplate",
             () -> new ArmorItem(
                     ModArmorMaterialRegistry.MERCINIUM,
                     ArmorItem.Type.CHESTPLATE,
                     new Item.Properties().rarity(Rarity.EPIC)));
 
-    public static final RegistryObject<ArmorItem> MERCINIUM_LEGGINGS = ITEMS.register("mercinium_leggings",
+    public static final RegistryObject<Item> MERCINIUM_LEGGINGS = ITEMS.register("mercinium_leggings",
             () -> new ArmorItem(
                     ModArmorMaterialRegistry.MERCINIUM,
                     ArmorItem.Type.LEGGINGS,
                     new Item.Properties().rarity(Rarity.EPIC)));
 
-    public static final RegistryObject<ArmorItem> MERCINIUM_BOOTS = ITEMS.register("mercinium_boots",
+    public static final RegistryObject<Item> MERCINIUM_BOOTS = ITEMS.register("mercinium_boots",
             () -> new ArmorItem(
                     ModArmorMaterialRegistry.MERCINIUM,
                     ArmorItem.Type.BOOTS,
