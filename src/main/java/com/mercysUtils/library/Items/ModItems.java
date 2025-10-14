@@ -47,6 +47,15 @@ public class ModItems {
     public static final RegistryObject<BlockItem> JELLYINIUM_ORE = ITEMS.register("jellyinium_ore",
             () -> new BlockItem(ModBlocks.JELLYINIUM_ORE.get(), new Item.Properties()));
 
+    public static final RegistryObject<BlockItem> MERCINIUM_APPLE_TREE_LOG = ITEMS.register("mercinium_apple_tree_log",
+            () -> new BlockItem(ModBlocks.MERCINIUM_APPLE_TREE_LOG.get(), new Item.Properties()));
+
+    public static final RegistryObject<BlockItem> MERCINIUM_APPLE_TREE_SAPLING = ITEMS.register("mercinium_apple_tree_sapling",
+            () -> new BlockItem(ModBlocks.MERCINIUM_APPLE_TREE_SAPLING.get(), new Item.Properties()));
+
+    public static final RegistryObject<BlockItem> JELLYINIUM_ORE = ITEMS.register("jellyinium_ore",
+            () -> new BlockItem(ModBlocks.JELLYINIUM_ORE.get(), new Item.Properties()));
+
     //Register Tools
     public static final RegistryObject<SwordItem> MERCINIUM_SWORD = ITEMS.register("mercinium_sword",
             () -> new SwordItem(
@@ -100,9 +109,7 @@ public class ModItems {
                     ModArmorMaterialRegistry.MERCINIUM,
                     ArmorItem.Type.BOOTS,
                     new Item.Properties().rarity(Rarity.EPIC)));
-
-
-
+ 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
