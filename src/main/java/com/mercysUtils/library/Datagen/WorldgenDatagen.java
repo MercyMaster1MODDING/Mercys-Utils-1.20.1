@@ -20,6 +20,7 @@ public class WorldgenDatagen extends DatapackBuiltinEntriesProvider {
             .add(Registries.BIOME, ModBiomes::bootstrap)
             .add(Registries.LEVEL_STEM, ModDimension::bootstrapStem)
             .add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
+            .add(Registries.LEVEL_STEM, ModDimension::bootstrapStem);
 
     public WorldgenDatagen(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, BUILDER, Set.of(MercysUtils.MOD_ID));

@@ -1,20 +1,13 @@
 package com.mercysUtils.library;
 
 import com.mercysUtils.library.Blocks.ModBlocks;
+import com.mercysUtils.library.Enchantments.ModEnchantments;
 import com.mercysUtils.library.Items.ModItems;
 import com.mercysUtils.library.MiscRegistries.ModCreativeModeTabsRegistry;
+import com.mercysUtils.library.Worldgen.Biomes.ModBiomes;
+import com.mercysUtils.library.Worldgen.Dimension.ModDimension;
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.Minecraft;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -22,13 +15,9 @@ import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -44,9 +33,13 @@ public class MercysUtils
     {
         IEventBus modEventBus = context.getModEventBus();
 
+        ModEnchantments.ENCHANTMENTS.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModCreativeModeTabsRegistry.TABS.register(modEventBus);
+        ModBiomes.ELVEN_FOREST.registry();
+        ModDimension.MERCYSDIMENSION.registry();
+
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -56,18 +49,21 @@ public class MercysUtils
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
+
+
+
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
     }
 
-    // Add the example block item to the building blocks tab
+    // Add the example block item to the vanilla ingredients tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS){
-            event.accept(ModItems.RAW_MERCINIUM);
-        }
+//        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+//            event.accept(ModItems.RAW_MERCINIUM);
+//        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

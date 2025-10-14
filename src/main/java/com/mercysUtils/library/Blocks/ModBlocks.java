@@ -8,11 +8,9 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-<<<<<<< Updated upstream
-=======
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SaplingBlock;
->>>>>>> Stashed changes
+import net.minecraft.world.level.block.TorchBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
@@ -31,18 +29,15 @@ public class ModBlocks extends Blocks {
             () -> new Block(BlockBehaviour.Properties.of()
                     .requiresCorrectToolForDrops()
                     .mapColor(MapColor.COLOR_LIGHT_BLUE)
-                    .strength(5)
+                    .strength(15)
                     .explosionResistance(1200)));
 
-<<<<<<< Updated upstream
-=======
     public static final RegistryObject<Block> JELLYINIUM_ORE = BLOCKS.register("jellyinium_ore",
             () -> new Block(BlockBehaviour.Properties.of()
                     .requiresCorrectToolForDrops()
                     .mapColor(MapColor.COLOR_RED)
                     .strength(15)
                     .explosionResistance(1200)));
-
 
     //Register Saplings
     public static final RegistryObject<Block> MERCINIUM_APPLE_TREE_SAPLING = BLOCKS.register("mercinium_apple_tree_sapling",
@@ -112,7 +107,7 @@ public class ModBlocks extends Blocks {
             });
 
 
->>>>>>> Stashed changes
+
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }

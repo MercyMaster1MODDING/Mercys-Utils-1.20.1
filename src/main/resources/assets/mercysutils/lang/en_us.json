@@ -1,0 +1,25 @@
+{
+
+  "item.mercysutils.raw_mercinium": "Raw Mercinium",
+  "item.mercysutils.raw_jellyinium": "Raw Jellyinium",
+  "item.mercysutils.mercinium_ingot": "Mercinium Ingot",
+  "item.mercysutils.jellyinium_ingot": "Jellyinium Ingot",
+  "item.mercysutils.mercinium_sword": "Mercinium Sword",
+  "item.mercysutils.jellyinium_sword": "Jellyinium Sword",
+  "item.mercysutils.mercinium_pickaxe": "Mercinium Pickaxe",
+  "item.mercysutils.jellyinium_pickaxe": "Jellyinium Pickaxe",
+  "item.mercysutils.mercinium_helmet": "Mercinium Helmet",
+  "item.mercysutils.mercinium_chestplate": "Mercinium Chestplate",
+  "item.mercysutils.mercinium_leggings": "Mercinium Leggings",
+  "item.mercysutils.mercinium_boots": "Mercinium Boots",
+
+  "item.mercysutils.advanced_sharpness_book": "Advanced Sharpness",
+  "enchantment.mercysutils.advanced_sharpness": "Advanced Sharpness",
+  "enchantment.mercysutils.tsunamis_reap": "Tsunami's Reap",
+
+  "block.mercysutils.mercinium_ore": "Mercinium Ore",
+  "block.mercysutils.jellyinium_ore": "Jellyinium Ore",
+
+  "mercysutils.mercys_utils_tab": "Mercy's Utils"
+
+}

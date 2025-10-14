@@ -1,11 +1,12 @@
 package com.mercysUtils.library.Items;
 
 import com.mercysUtils.library.Blocks.ModBlocks;
+import com.mercysUtils.library.FoodItems.ModFoods;
 import com.mercysUtils.library.MercysUtils;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraftforge.eventbus.EventBus;
+import com.mercysUtils.library.MiscRegistries.ModArmorMaterialRegistry;
+import com.mercysUtils.library.tiers.ModTiers;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -20,12 +21,29 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_MERCINIUM = ITEMS.register("raw_mercinium",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> RAW_JELLYINIUM = ITEMS.register("raw_jellyinium",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> JELLYINIUM_INGOT = ITEMS.register("jellyinium_ingot",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> MERCINIUM_INGOT = ITEMS.register("mercinium_ingot",
+            () -> new Item(new Item.Properties()));
+
+    //Register FoodItems
+    public static final RegistryObject<Item> MERCINIUM_APPLE = ITEMS.register("mercinium_apple",
+            () -> new Item(new Item.Properties().food(ModFoods.MERCINIUM_APPLE)));
+    public static final RegistryObject<Item> SUPER_MERCINIUM_APPLE = ITEMS.register("super_mercinium_apple",
+            () -> new Item(new Item.Properties().food(ModFoods.SUPER_MERCINIUM_APPLE)));
+
+    //Register Enchanted Book Items
+//    public static final RegistryObject<EnchantedBookItem> ADVANCED_SHARPNESS_BOOK = ITEMS.register("advanced_sharpness_book",
+//            () -> new EnchantedBookItem(new Item.Properties()));
+
     //Register BlockItems
-    public static final RegistryObject<BlockItem> MERCINIUM_ORE_ITEM = ITEMS.register("mercinium_ore",
+    public static final RegistryObject<BlockItem> MERCINIUM_ORE = ITEMS.register("mercinium_ore",
             () -> new BlockItem(ModBlocks.MERCINIUM_ORE.get(), new Item.Properties()));
 
-<<<<<<< Updated upstream
-=======
     public static final RegistryObject<BlockItem> JELLYINIUM_ORE = ITEMS.register("jellyinium_ore",
             () -> new BlockItem(ModBlocks.JELLYINIUM_ORE.get(), new Item.Properties()));
 
@@ -34,6 +52,9 @@ public class ModItems {
 
     public static final RegistryObject<BlockItem> MERCINIUM_APPLE_TREE_SAPLING = ITEMS.register("mercinium_apple_tree_sapling",
             () -> new BlockItem(ModBlocks.MERCINIUM_APPLE_TREE_SAPLING.get(), new Item.Properties()));
+
+    public static final RegistryObject<BlockItem> JELLYINIUM_ORE = ITEMS.register("jellyinium_ore",
+            () -> new BlockItem(ModBlocks.JELLYINIUM_ORE.get(), new Item.Properties()));
 
     //Register Tools
     public static final RegistryObject<SwordItem> MERCINIUM_SWORD = ITEMS.register("mercinium_sword",
@@ -88,11 +109,7 @@ public class ModItems {
                     ModArmorMaterialRegistry.MERCINIUM,
                     ArmorItem.Type.BOOTS,
                     new Item.Properties().rarity(Rarity.EPIC)));
-
-
-
-
->>>>>>> Stashed changes
+ 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
