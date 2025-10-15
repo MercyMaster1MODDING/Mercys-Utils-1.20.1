@@ -16,4 +16,14 @@ public class ModFoods extends ModItems {
             .nutrition(16)
             .saturationMod(16)
             .effect(() -> new MobEffectInstance(MobEffects.SATURATION, 60), 1f).build();
+
+    public static final FoodProperties JELLO = new FoodProperties.Builder()
+            .nutrition(2)
+            .saturationMod(2)
+            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 60), 1f).build();
+
+    public static final FoodProperties JELLO_PIE = new FoodProperties.Builder()
+            .nutrition(8)
+            .saturationMod(8)
+            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 60, 10), 1f).build();
 }

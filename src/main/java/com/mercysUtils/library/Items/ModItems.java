@@ -29,12 +29,20 @@ public class ModItems {
 
     public static final RegistryObject<Item> MERCINIUM_INGOT = ITEMS.register("mercinium_ingot",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> GELATIN = ITEMS.register("gelatin",
+            () -> new Item(new Item.Properties()));
+
 
     //Register FoodItems
     public static final RegistryObject<Item> MERCINIUM_APPLE = ITEMS.register("mercinium_apple",
             () -> new Item(new Item.Properties().food(ModFoods.MERCINIUM_APPLE)));
     public static final RegistryObject<Item> SUPER_MERCINIUM_APPLE = ITEMS.register("super_mercinium_apple",
             () -> new Item(new Item.Properties().food(ModFoods.SUPER_MERCINIUM_APPLE)));
+    public static final RegistryObject<Item> JELLO = ITEMS.register("jello",
+            () -> new Item(new Item.Properties().food(ModFoods.JELLO)));
+    public static final RegistryObject<Item> JELLO_PIE = ITEMS.register("jello_pie",
+            () -> new Item(new Item.Properties().food(ModFoods.JELLO_PIE)));
+
 
     //Register Enchanted Book Items
 //    public static final RegistryObject<EnchantedBookItem> ADVANCED_SHARPNESS_BOOK = ITEMS.register("advanced_sharpness_book",
@@ -44,11 +52,13 @@ public class ModItems {
     public static final RegistryObject<BlockItem> MERCINIUM_ORE = ITEMS.register("mercinium_ore",
             () -> new BlockItem(ModBlocks.MERCINIUM_ORE.get(), new Item.Properties()));
 
-    public static final RegistryObject<BlockItem> JELLYINIUM_ORE = ITEMS.register("jellyinium_ore",
-            () -> new BlockItem(ModBlocks.JELLYINIUM_ORE.get(), new Item.Properties()));
-
     public static final RegistryObject<BlockItem> MERCINIUM_APPLE_TREE_LOG = ITEMS.register("mercinium_apple_tree_log",
             () -> new BlockItem(ModBlocks.MERCINIUM_APPLE_TREE_LOG.get(), new Item.Properties()));
+
+    public static final RegistryObject<BlockItem> MERCINIUM_APPLE_TREE_LEAVES = ITEMS.register("mercinium_apple_tree_leaves",
+            () -> new BlockItem(ModBlocks.MERCINIUM_APPLE_TREE_LEAVES.get(), new Item.Properties()));
+
+
 
     public static final RegistryObject<BlockItem> MERCINIUM_APPLE_TREE_SAPLING = ITEMS.register("mercinium_apple_tree_sapling",
             () -> new BlockItem(ModBlocks.MERCINIUM_APPLE_TREE_SAPLING.get(), new Item.Properties()));

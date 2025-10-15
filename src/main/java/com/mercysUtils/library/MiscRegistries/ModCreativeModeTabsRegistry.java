@@ -50,6 +50,13 @@ public class ModCreativeModeTabsRegistry {
                         //Food
                         output.accept(ModItems.MERCINIUM_APPLE.get());
                         output.accept(ModItems.SUPER_MERCINIUM_APPLE.get());
+                        output.accept(ModItems.JELLO.get());
+                        output.accept(ModItems.JELLO_PIE.get());
+
+                        //Wood and Variants
+                        output.accept(ModItems.MERCINIUM_APPLE_TREE_SAPLING.get());
+                        output.accept(ModItems.MERCINIUM_APPLE_TREE_LOG.get());
+                        output.accept(ModItems.MERCINIUM_APPLE_TREE_LEAVES.get());
 
                         //Enchantments
 //                        output.accept(ModItems.ADVANCED_SHARPNESS_BOOK.get());

@@ -1,6 +1,7 @@
 package com.mercysUtils.library.Blocks;
 
 import com.mercysUtils.library.Blocks.TreeBlocks.ModFlammableRotateablePillar;
+import com.mercysUtils.library.Datagen.Trees.JellyiniumAppleTree;
 import com.mercysUtils.library.Datagen.Trees.MerciniumAppleTree;
 import com.mercysUtils.library.MercysUtils;
 import net.minecraft.core.BlockPos;
@@ -39,7 +40,7 @@ public class ModBlocks extends Blocks {
                     .strength(15)
                     .explosionResistance(1200)));
 
-    //Register Saplings
+    //Register Saplings and Wood
     public static final RegistryObject<Block> MERCINIUM_APPLE_TREE_SAPLING = BLOCKS.register("mercinium_apple_tree_sapling",
             () -> new SaplingBlock(new MerciniumAppleTree(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
@@ -86,6 +87,71 @@ public class ModBlocks extends Blocks {
             });
 
     public static final RegistryObject<LeavesBlock> MERCINIUM_APPLE_TREE_LEAVES = BLOCKS.register("mercinium_apple_tree_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)){
+
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 60;
+
+
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+            });
+    public static final RegistryObject<Block> JELLYINIUM_APPLE_TREE_SAPLING = BLOCKS.register("jellyinium_apple_tree_sapling",
+            () -> new SaplingBlock(new JellyiniumAppleTree(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+    //Register Wood Blocks
+    public static final RegistryObject<Block> JELLYINIUM_APPLE_TREE_LOG = BLOCKS.register("jellyinium_apple_tree_log",
+            () -> new ModFlammableRotateablePillar(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
+                    .strength(3)
+                    .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> JELLYINIUM_APPLE_WOOD = BLOCKS.register("jellyinium_apple_tree_wood",
+            () -> new ModFlammableRotateablePillar(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)
+                    .strength(3)
+                    .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> STRIPPED_JELLYINIUM_APPLE_TREE_LOG = BLOCKS.register("stripped_jellyinium_apple_tree_log",
+            () -> new ModFlammableRotateablePillar(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)
+                    .strength(3)
+                    .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> STRIPPED_JELLYINIUM_APPLE_WOOD = BLOCKS.register("stripped_jellyinium_apple_wood",
+            () -> new ModFlammableRotateablePillar(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)
+                    .strength(3)
+                    .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> JELLYINIUM_APPLE_TREE_PLANKS = BLOCKS.register("jellyinium_apple_tree_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)){
+
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+
+
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+            });
+
+    public static final RegistryObject<LeavesBlock> JELLYINIUM_APPLE_TREE_LEAVES = BLOCKS.register("jellyinium_apple_tree_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)){
 
                 @Override
