@@ -1,5 +1,6 @@
 package com.mercysUtils.library.Blocks;
 
+import com.mercysUtils.library.Blocks.Custom.TutorialBlockEntityWorkstation;
 import com.mercysUtils.library.Blocks.TreeBlocks.ModFlammableRotateablePillar;
 import com.mercysUtils.library.Datagen.Trees.JellyiniumAppleTree;
 import com.mercysUtils.library.Datagen.Trees.MerciniumAppleTree;
@@ -171,6 +172,9 @@ public class ModBlocks extends Blocks {
                     return 30;
                 }
             });
+
+    public static final RegistryObject<Block> TUTORIAL_BLOCK_WORKSTATION = BLOCKS.register("tutorial_block_entity_workstation",
+            () -> new TutorialBlockEntityWorkstation(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
 
 

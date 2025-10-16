@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": {
+      "facing=north": {
+        "model": "mercysutils:block/tutorial_block_entity_workstation"
+      },
+      "facing=east": {
+        "model": "mercysutils:block/tutorial_block_entity_workstation",
+        "y": 90
+      },
+      "facing=south": {
+        "model": "mercysutils:block/tutorial_block_entity_workstation",
+        "y": 180
+      },
+      "facing=west": {
+        "model": "mercysutils:block/tutorial_block_entity_workstation",
+        "y": 270
+      }
+    }
+  }
+}

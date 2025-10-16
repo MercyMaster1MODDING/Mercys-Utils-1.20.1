@@ -9,6 +9,7 @@ import com.mercysUtils.library.MercysUtils;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
@@ -32,8 +33,8 @@ public class ModCreativeModeTabsRegistry {
                         output.accept(ModItems.RAW_JELLYINIUM.get());
                         output.accept(ModItems.MERCINIUM_INGOT.get());
                         output.accept(ModItems.JELLYINIUM_INGOT.get());
-                        output.accept(ModBlocks.MERCINIUM_ORE.get());
-                        output.accept(ModBlocks.JELLYINIUM_ORE.get());
+//                        output.accept(ModBlocks.MERCINIUM_ORE.get());
+//                        output.accept(ModBlocks.JELLYINIUM_ORE.get());
 
                         //Tools
                         output.accept(ModItems.MERCINIUM_SWORD.get());
@@ -58,7 +59,10 @@ public class ModCreativeModeTabsRegistry {
                         output.accept(ModItems.MERCINIUM_APPLE_TREE_LOG.get());
                         output.accept(ModItems.MERCINIUM_APPLE_TREE_LEAVES.get());
 
-                        //Enchantments
+                        //Block Entities
+                        output.accept(ModBlocks.TUTORIAL_BLOCK_WORKSTATION.get());
+
+//                        Enchantments
 //                        output.accept(ModItems.ADVANCED_SHARPNESS_BOOK.get());
 
 

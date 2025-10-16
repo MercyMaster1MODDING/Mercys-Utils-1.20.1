@@ -1,5 +1,6 @@
 package com.mercysUtils.library.Items;
 
+import com.mercysUtils.library.Blocks.Entity.ModBlockEntities;
 import com.mercysUtils.library.Blocks.ModBlocks;
 import com.mercysUtils.library.FoodItems.ModFoods;
 import com.mercysUtils.library.MercysUtils;
@@ -7,6 +8,7 @@ import com.mercysUtils.library.MiscRegistries.ModArmorMaterialRegistry;
 import com.mercysUtils.library.tiers.ModTiers;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -29,6 +31,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> MERCINIUM_INGOT = ITEMS.register("mercinium_ingot",
             () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> GELATIN = ITEMS.register("gelatin",
             () -> new Item(new Item.Properties()));
 
@@ -51,6 +54,9 @@ public class ModItems {
     //Register BlockItems
     public static final RegistryObject<BlockItem> MERCINIUM_ORE = ITEMS.register("mercinium_ore",
             () -> new BlockItem(ModBlocks.MERCINIUM_ORE.get(), new Item.Properties()));
+
+    public static final RegistryObject<BlockItem> JELLYINIUM_ORE = ITEMS.register("jellyinium_ore",
+            () -> new BlockItem(ModBlocks.JELLYINIUM_ORE.get(), new Item.Properties()));
 
     public static final RegistryObject<BlockItem> MERCINIUM_APPLE_TREE_LOG = ITEMS.register("mercinium_apple_tree_log",
             () -> new BlockItem(ModBlocks.MERCINIUM_APPLE_TREE_LOG.get(), new Item.Properties()));
@@ -116,6 +122,12 @@ public class ModItems {
                     ModArmorMaterialRegistry.MERCINIUM,
                     ArmorItem.Type.BOOTS,
                     new Item.Properties().rarity(Rarity.EPIC)));
+
+    public static final RegistryObject<Item> TUTORIAL_BLOCK_WORKSTATION_ITEM =
+            ITEMS.register("tutorial_block_workstation",
+                    () -> new BlockItem(ModBlocks.TUTORIAL_BLOCK_WORKSTATION.get(), new Item.Properties()));
+
+
  
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
