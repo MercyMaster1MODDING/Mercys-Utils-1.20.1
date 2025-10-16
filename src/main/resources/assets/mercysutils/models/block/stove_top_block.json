@@ -2,8 +2,8 @@
   "credit": "Made with Blockbench",
   "texture_size": [64, 64],
   "textures": {
-    "3": "mercysutils:block/tutorial_block_entity_workstation",
-    "particle": "mercysutils:block/tutorial_block_entity_workstation"
+    "3": "mercysutils:block/stove_top_block",
+    "particle": "mercysutils:block/stove_top_block"
   },
   "elements": [
     {
@@ -76,7 +76,7 @@
       "from": [5, 12.002, 5],
       "to": [11, 12.002, 11],
       "faces": {
-        "north": {"uv": [0, 0, 1.5, 0], "texture": "#missing"},
+        "north": {"uv": [0, 0, 1.5, 0], "texture": "#3"},
         "east": {"uv": [1, 5.5, 2.5, 5.5], "texture": "#3"},
         "south": {"uv": [1, 5.5, 2.5, 5.5], "texture": "#3"},
         "west": {"uv": [1, 5.5, 2.5, 5.5], "texture": "#3"},

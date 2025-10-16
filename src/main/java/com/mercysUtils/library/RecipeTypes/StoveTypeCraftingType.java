@@ -9,19 +9,17 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.storage.loot.SerializerType;
 import org.jetbrains.annotations.Nullable;
 
-public class TutorialCraftingType implements Recipe<SimpleContainer> {
+public class StoveTypeCraftingType implements Recipe<SimpleContainer> {
     private final NonNullList<Ingredient> inputlist;
     private final ItemStack output;
     private final ResourceLocation id;
 
-    public TutorialCraftingType(NonNullList<Ingredient> inputlist, ItemStack output, ResourceLocation id) {
+    public StoveTypeCraftingType(NonNullList<Ingredient> inputlist, ItemStack output, ResourceLocation id) {
         this.inputlist = inputlist;
         this.output = output;
         this.id = id;
@@ -65,17 +63,17 @@ public class TutorialCraftingType implements Recipe<SimpleContainer> {
         return Type.INSTANCE;
     }
 
-    public static class Type implements RecipeType<TutorialCraftingType>{
+    public static class Type implements RecipeType<StoveTypeCraftingType>{
         public static final Type INSTANCE = new Type();
-        public static final String ID = "tutorial_crafting_type";
+        public static final String ID = "stove_top_crafting_type";
     }
 
-    public static class Serializer implements RecipeSerializer<TutorialCraftingType>{
+    public static class Serializer implements RecipeSerializer<StoveTypeCraftingType>{
         public static final Serializer INSTANCE = new Serializer();
-        public static final ResourceLocation ID = new ResourceLocation(MercysUtils.MOD_ID, "tutorial_crafting_type");
+        public static final ResourceLocation ID = new ResourceLocation(MercysUtils.MOD_ID, "stove_top_crafting_type");
 
         @Override
-        public TutorialCraftingType fromJson(ResourceLocation recipeID, JsonObject serializedRecipeObject) {
+        public StoveTypeCraftingType fromJson(ResourceLocation recipeID, JsonObject serializedRecipeObject) {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(serializedRecipeObject, "output"));
 
             JsonArray ingredients = GsonHelper.getAsJsonArray(serializedRecipeObject, "ingredients");
@@ -85,11 +83,11 @@ public class TutorialCraftingType implements Recipe<SimpleContainer> {
                 inputs.set(num, Ingredient.fromJson(ingredients.get(num)));
             }
 
-            return new TutorialCraftingType(inputs, output, recipeID);
+            return new StoveTypeCraftingType(inputs, output, recipeID);
         }
 
         @Override
-        public @Nullable TutorialCraftingType fromNetwork(ResourceLocation recipeId, FriendlyByteBuf byteBuf) {
+        public @Nullable StoveTypeCraftingType fromNetwork(ResourceLocation recipeId, FriendlyByteBuf byteBuf) {
             NonNullList<Ingredient> inputs = NonNullList.withSize(byteBuf.readInt(), Ingredient.EMPTY);
 
             for (int num = 0; num < inputs.size(); num++){
@@ -98,11 +96,11 @@ public class TutorialCraftingType implements Recipe<SimpleContainer> {
 
             ItemStack output = byteBuf.readItem();
 
-            return new TutorialCraftingType(inputs, output, recipeId);
+            return new StoveTypeCraftingType(inputs, output, recipeId);
         }
 
         @Override
-        public void toNetwork(FriendlyByteBuf byteBuf, TutorialCraftingType tutorialCraftingVar) {
+        public void toNetwork(FriendlyByteBuf byteBuf, StoveTypeCraftingType tutorialCraftingVar) {
             byteBuf.writeInt(tutorialCraftingVar.inputlist.size());
 
             for (Ingredient ingredient : tutorialCraftingVar.getIngredients()){

@@ -52,6 +52,7 @@ public class ModCreativeModeTabsRegistry {
                         output.accept(ModItems.MERCINIUM_APPLE.get());
                         output.accept(ModItems.SUPER_MERCINIUM_APPLE.get());
                         output.accept(ModItems.JELLO.get());
+                        output.accept(ModItems.GELATIN.get());
                         output.accept(ModItems.JELLO_PIE.get());
 
                         //Wood and Variants
@@ -60,7 +61,7 @@ public class ModCreativeModeTabsRegistry {
                         output.accept(ModItems.MERCINIUM_APPLE_TREE_LEAVES.get());
 
                         //Block Entities
-                        output.accept(ModBlocks.TUTORIAL_BLOCK_WORKSTATION.get());
+                        output.accept(ModBlocks.STOVE_TOP_BLOCK.get());
 
 //                        Enchantments
 //                        output.accept(ModItems.ADVANCED_SHARPNESS_BOOK.get());

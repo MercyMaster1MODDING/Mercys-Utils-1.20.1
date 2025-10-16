@@ -16,8 +16,8 @@ public class ModMenuTypes {
             DeferredRegister.create(ForgeRegistries.MENU_TYPES, MercysUtils.MOD_ID);
 
 
-    public static final RegistryObject<MenuType<TutorialBlockEntityWorkstationMenu>> TUTORIAL_BLOCK_ENTITY_WORKSTATION_MENU =
-            registerMenuType("tutorial_block_entity_workstation_menu", TutorialBlockEntityWorkstationMenu::new);
+    public static final RegistryObject<MenuType<StoveTopMenu>> STOVE_TOP_MENU_TYPE =
+            registerMenuType("stove_top_menu", StoveTopMenu::new);
 
 
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(String name,

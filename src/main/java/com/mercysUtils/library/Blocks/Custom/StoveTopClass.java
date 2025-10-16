@@ -1,7 +1,7 @@
 package com.mercysUtils.library.Blocks.Custom;
 
 import com.mercysUtils.library.Blocks.Entity.ModBlockEntities;
-import com.mercysUtils.library.Blocks.Entity.TutorialBlockEntityWorkstationEntity;
+import com.mercysUtils.library.Blocks.Entity.StoveTopEntityClass;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -21,10 +21,10 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class TutorialBlockEntityWorkstation extends BaseEntityBlock {
+public class StoveTopClass extends BaseEntityBlock {
     public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16,12,16);
 
-    public TutorialBlockEntityWorkstation(Properties properties) {
+    public StoveTopClass(Properties properties) {
         super(properties);
     }
 
@@ -42,8 +42,8 @@ public class TutorialBlockEntityWorkstation extends BaseEntityBlock {
     public void onRemove(BlockState blockState, Level level, BlockPos blockPos, BlockState newState1, boolean bool) {
         if (blockState.getBlock() != newState1.getBlock()) {
             BlockEntity blockEntity = level.getBlockEntity(blockPos);
-            if (blockEntity instanceof TutorialBlockEntityWorkstationEntity) {
-                ((TutorialBlockEntityWorkstationEntity) blockEntity).drops();
+            if (blockEntity instanceof StoveTopEntityClass) {
+                ((StoveTopEntityClass) blockEntity).drops();
             }
         }
 
@@ -53,7 +53,7 @@ public class TutorialBlockEntityWorkstation extends BaseEntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(@NotNull BlockPos blockPos, BlockState blockState) {
-        return new TutorialBlockEntityWorkstationEntity(blockPos, blockState);
+        return new StoveTopEntityClass(blockPos, blockState);
     }
 
 //    @Override
@@ -66,7 +66,7 @@ public class TutorialBlockEntityWorkstation extends BaseEntityBlock {
                                  Player player, InteractionHand hand, BlockHitResult hitResult) {
         if (!level.isClientSide()) {
             BlockEntity blockEntity = level.getBlockEntity(blockPos);
-            if (blockEntity instanceof TutorialBlockEntityWorkstationEntity workstationEntity) {
+            if (blockEntity instanceof StoveTopEntityClass workstationEntity) {
                 // 👇 This line actually opens your menu and sends the BlockPos through the buffer
                 net.minecraftforge.network.NetworkHooks.openScreen(
                         (net.minecraft.server.level.ServerPlayer) player,
@@ -74,7 +74,7 @@ public class TutorialBlockEntityWorkstation extends BaseEntityBlock {
                         buf -> buf.writeBlockPos(blockPos)
                 );
             } else {
-                throw new IllegalStateException("Missing container provider for TutorialBlockEntityWorkstationEntity!");
+                throw new IllegalStateException("Missing container provider for StoveTop!");
             }
         }
 
@@ -87,8 +87,8 @@ public class TutorialBlockEntityWorkstation extends BaseEntityBlock {
         if (level.isClientSide){
             return null;
         }
-        return createTickerHelper(tBlockEntityType, ModBlockEntities.TUTORIAL_BLOCK_ENTITY_WORKSTATION_BE.get(), (
-                (level1, blockPos, blockState1, tutorialBlockEntityWorkstationEntity) ->
-                        tutorialBlockEntityWorkstationEntity.tick(level1, blockPos, blockState1)));
+        return createTickerHelper(tBlockEntityType, ModBlockEntities.STOVE_TOP_ENTITY_CLASS_BLOCK_ENTITY_TYPE.get(), (
+                (level1, blockPos, blockState1, stoveTopEntityClass) ->
+                        stoveTopEntityClass.tick(level1, blockPos, blockState1)));
     }
 }

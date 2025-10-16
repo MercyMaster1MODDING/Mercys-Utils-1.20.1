@@ -1,0 +1,12 @@
+{
+  "type": "mercysutils:stove_top_crafting_type",
+  "ingredients": [
+    {
+      "item": "mercysutils:gelatin"
+    }
+  ],
+  "output": {
+    "count": 1,
+    "item": "mercysutils:jello_pie"
+  }
+}

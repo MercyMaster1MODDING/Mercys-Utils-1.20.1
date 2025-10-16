@@ -1,6 +1,6 @@
 package com.mercysUtils.library.Screen;
 
-import com.mercysUtils.library.Blocks.Entity.TutorialBlockEntityWorkstationEntity;
+import com.mercysUtils.library.Blocks.Entity.StoveTopEntityClass;
 import com.mercysUtils.library.Blocks.ModBlocks;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -13,20 +13,20 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
 import org.jetbrains.annotations.NotNull;
 
-public class TutorialBlockEntityWorkstationMenu extends AbstractContainerMenu {
+public class StoveTopMenu extends AbstractContainerMenu {
 
-    public final TutorialBlockEntityWorkstationEntity blockEntity;
+    public final StoveTopEntityClass blockEntity;
     private final Level level;
     private final ContainerData data;
 
-    public TutorialBlockEntityWorkstationMenu(int containerId, Inventory inventory, FriendlyByteBuf byteBuf){
+    public StoveTopMenu(int containerId, Inventory inventory, FriendlyByteBuf byteBuf){
         this(containerId, inventory, inventory.player.level().getBlockEntity(byteBuf.readBlockPos()), new SimpleContainerData(2));
     }
 
-    public TutorialBlockEntityWorkstationMenu(int containerId, Inventory inventory, BlockEntity entity, ContainerData data){
-        super(ModMenuTypes.TUTORIAL_BLOCK_ENTITY_WORKSTATION_MENU.get(),containerId);
+    public StoveTopMenu(int containerId, Inventory inventory, BlockEntity entity, ContainerData data){
+        super(ModMenuTypes.STOVE_TOP_MENU_TYPE.get(),containerId);
         checkContainerSize(inventory, 2);
-        blockEntity = ((TutorialBlockEntityWorkstationEntity) entity);
+        blockEntity = ((StoveTopEntityClass) entity);
         this.level = inventory.player.level();
         this.data = data;
 
@@ -111,7 +111,7 @@ public class TutorialBlockEntityWorkstationMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(@NotNull Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, ModBlocks.TUTORIAL_BLOCK_WORKSTATION.get());
+                player, ModBlocks.STOVE_TOP_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

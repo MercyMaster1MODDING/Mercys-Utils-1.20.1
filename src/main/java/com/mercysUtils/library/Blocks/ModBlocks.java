@@ -1,6 +1,6 @@
 package com.mercysUtils.library.Blocks;
 
-import com.mercysUtils.library.Blocks.Custom.TutorialBlockEntityWorkstation;
+import com.mercysUtils.library.Blocks.Custom.StoveTopClass;
 import com.mercysUtils.library.Blocks.TreeBlocks.ModFlammableRotateablePillar;
 import com.mercysUtils.library.Datagen.Trees.JellyiniumAppleTree;
 import com.mercysUtils.library.Datagen.Trees.MerciniumAppleTree;
@@ -12,7 +12,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SaplingBlock;
-import net.minecraft.world.level.block.TorchBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
@@ -173,8 +172,8 @@ public class ModBlocks extends Blocks {
                 }
             });
 
-    public static final RegistryObject<Block> TUTORIAL_BLOCK_WORKSTATION = BLOCKS.register("tutorial_block_entity_workstation",
-            () -> new TutorialBlockEntityWorkstation(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+    public static final RegistryObject<Block> STOVE_TOP_BLOCK = BLOCKS.register("stove_top_block",
+            () -> new StoveTopClass(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
 
 

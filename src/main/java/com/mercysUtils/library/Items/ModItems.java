@@ -123,9 +123,9 @@ public class ModItems {
                     ArmorItem.Type.BOOTS,
                     new Item.Properties().rarity(Rarity.EPIC)));
 
-    public static final RegistryObject<Item> TUTORIAL_BLOCK_WORKSTATION_ITEM =
-            ITEMS.register("tutorial_block_workstation",
-                    () -> new BlockItem(ModBlocks.TUTORIAL_BLOCK_WORKSTATION.get(), new Item.Properties()));
+    public static final RegistryObject<Item> STOVE_TOP_ITEM =
+            ITEMS.register("stove_top_block",
+                    () -> new BlockItem(ModBlocks.STOVE_TOP_BLOCK.get(), new Item.Properties()));
 
 
  

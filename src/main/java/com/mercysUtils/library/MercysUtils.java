@@ -12,7 +12,6 @@ import com.mercysUtils.library.Worldgen.Biomes.ModBiomes;
 import com.mercysUtils.library.Worldgen.Dimension.ModDimension;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.world.level.biome.Biome;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -91,7 +90,7 @@ public class MercysUtils
         public static void onClientSetup(FMLClientSetupEvent event)
         {
 
-            MenuScreens.register(ModMenuTypes.TUTORIAL_BLOCK_ENTITY_WORKSTATION_MENU.get(), TutorialBlockEntityWorkstationScreen::new);
+            MenuScreens.register(ModMenuTypes.STOVE_TOP_MENU_TYPE.get(), TutorialBlockEntityWorkstationScreen::new);
             // Some client setup code
         }
     }

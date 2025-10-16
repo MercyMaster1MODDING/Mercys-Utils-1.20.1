@@ -1,7 +1,7 @@
 package com.mercysUtils.library.Blocks.Entity;
 
-import com.mercysUtils.library.Items.ModItems;
-import com.mercysUtils.library.Screen.TutorialBlockEntityWorkstationMenu;
+import com.mercysUtils.library.RecipeTypes.StoveTypeCraftingType;
+import com.mercysUtils.library.Screen.StoveTopMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -26,7 +26,9 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class TutorialBlockEntityWorkstationEntity extends BlockEntity implements MenuProvider {
+import java.util.Optional;
+
+public class StoveTopEntityClass extends BlockEntity implements MenuProvider {
 
     private final ItemStackHandler itemStackHandler = new ItemStackHandler(2);
 
@@ -39,14 +41,14 @@ public class TutorialBlockEntityWorkstationEntity extends BlockEntity implements
     private int progress = 0;
     private int maxprogress = 78;
 
-    public TutorialBlockEntityWorkstationEntity(BlockPos blockPos, BlockState blockState) {
-        super(ModBlockEntities.TUTORIAL_BLOCK_ENTITY_WORKSTATION_BE.get(), blockPos, blockState);
+    public StoveTopEntityClass(BlockPos blockPos, BlockState blockState) {
+        super(ModBlockEntities.STOVE_TOP_ENTITY_CLASS_BLOCK_ENTITY_TYPE.get(), blockPos, blockState);
         this.data = new ContainerData() {
             @Override
             public int get(int num) {
                 return switch (num){
-                    case 0 -> TutorialBlockEntityWorkstationEntity.this.progress;
-                    case 1 -> TutorialBlockEntityWorkstationEntity.this.maxprogress;
+                    case 0 -> StoveTopEntityClass.this.progress;
+                    case 1 -> StoveTopEntityClass.this.maxprogress;
                         default -> 0;
 
                 };
@@ -55,8 +57,8 @@ public class TutorialBlockEntityWorkstationEntity extends BlockEntity implements
             @Override
             public void set(int num, int value) {
                 switch (num){
-                    case 0 -> TutorialBlockEntityWorkstationEntity.this.progress = value;
-                    case 1 -> TutorialBlockEntityWorkstationEntity.this.maxprogress = value;
+                    case 0 -> StoveTopEntityClass.this.progress = value;
+                    case 1 -> StoveTopEntityClass.this.maxprogress = value;
                 }
 
             }
@@ -98,18 +100,19 @@ public class TutorialBlockEntityWorkstationEntity extends BlockEntity implements
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("block.mercysutils.tutorial_block_entity_workstation");
+        return Component.translatable("block.mercysutils.stove_top_station");
+        //Previously block.mercysutils.tutorial_block_entity_workstation
     }
 
     @Override
     public @Nullable AbstractContainerMenu createMenu(int containerId, Inventory inventory, Player player) {
-        return new TutorialBlockEntityWorkstationMenu(containerId, inventory, this , this.data);
+        return new StoveTopMenu(containerId, inventory, this , this.data);
     }
 
     @Override
     protected void saveAdditional(CompoundTag tag) {
         tag.put("inventory", itemStackHandler.serializeNBT());
-        tag.putInt("tutorial_block_entity_workstation_progress", progress);
+        tag.putInt("stove_top_progress", progress);
         super.saveAdditional(tag);
     }
 
@@ -117,7 +120,7 @@ public class TutorialBlockEntityWorkstationEntity extends BlockEntity implements
     public void load(CompoundTag tag) {
         super.load(tag);
         itemStackHandler.deserializeNBT(tag.getCompound("inventory"));
-        progress = tag.getInt("tutorial_block_entity_workstation_progress");
+        progress = tag.getInt("stove_top_progress");
     }
 
     public void tick(Level level1, BlockPos blockPos, BlockState blockState1) {
@@ -129,9 +132,9 @@ public class TutorialBlockEntityWorkstationEntity extends BlockEntity implements
                 craftItem();
                 resetProgress();
             }
-            else {
-                resetProgress();
-            }
+        }
+        else {
+            resetProgress();
         }
     }
 
@@ -141,7 +144,10 @@ public class TutorialBlockEntityWorkstationEntity extends BlockEntity implements
 
     private void craftItem() {
 
-        ItemStack result = new ItemStack(ModItems.JELLO_PIE.get(), 1);
+        Optional<StoveTypeCraftingType> recipe = getCurrentRecipe();
+
+        ItemStack result = recipe.get().getResultItem(null);
+
         this.itemStackHandler.extractItem(INPUT_SLOT, 1, false);
 
         this.itemStackHandler.setStackInSlot(Output_SLOT, new ItemStack(result.getItem(),
@@ -150,12 +156,25 @@ public class TutorialBlockEntityWorkstationEntity extends BlockEntity implements
 
     private boolean hasRecipe(){
 
-        boolean hasCraftingItem = this.itemStackHandler.getStackInSlot(INPUT_SLOT).getItem() == ModItems.GELATIN.get();
-        ItemStack result = new ItemStack(ModItems.JELLO_PIE.get());
+        Optional<StoveTypeCraftingType> recipe = getCurrentRecipe();
 
-        return hasCraftingItem && canInsertAmountIntoOutputSlot(result.getCount()) &&
-                canInsertItemIntoOutputSlot(result.getItem());
+        if (recipe.isEmpty()) {
+            return false;
+        }
+        ItemStack result = recipe.get().getResultItem(this.level.registryAccess());
 
+        return canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
+
+    }
+
+    private Optional<StoveTypeCraftingType> getCurrentRecipe() {
+
+        SimpleContainer inventory = new SimpleContainer(this.itemStackHandler.getSlots());
+
+        for (int num = 0; num < itemStackHandler.getSlots(); num ++){
+            inventory.setItem(num, this.itemStackHandler.getStackInSlot(num));
+        }
+        return this.level.getRecipeManager().getRecipeFor(StoveTypeCraftingType.Type.INSTANCE, inventory, level);
     }
 
     private boolean canInsertItemIntoOutputSlot(Item item) {

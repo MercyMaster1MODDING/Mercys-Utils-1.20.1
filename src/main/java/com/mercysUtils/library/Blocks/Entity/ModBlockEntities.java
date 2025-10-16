@@ -13,10 +13,10 @@ public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, MercysUtils.MOD_ID);
 
-    public static final RegistryObject<BlockEntityType<TutorialBlockEntityWorkstationEntity>> TUTORIAL_BLOCK_ENTITY_WORKSTATION_BE =
-            BLOCK_ENTITIES.register("tutorial_block_entity_workstation_be", () ->
-                    BlockEntityType.Builder.of(TutorialBlockEntityWorkstationEntity::new,
-                            ModBlocks.TUTORIAL_BLOCK_WORKSTATION.get()).build(null));
+    public static final RegistryObject<BlockEntityType<StoveTopEntityClass>> STOVE_TOP_ENTITY_CLASS_BLOCK_ENTITY_TYPE =
+            BLOCK_ENTITIES.register("stove_top_block", () ->
+                    BlockEntityType.Builder.of(StoveTopEntityClass::new,
+                            ModBlocks.STOVE_TOP_BLOCK.get()).build(null));
 
     public static void register(IEventBus eventBus){
         BLOCK_ENTITIES.register(eventBus);
