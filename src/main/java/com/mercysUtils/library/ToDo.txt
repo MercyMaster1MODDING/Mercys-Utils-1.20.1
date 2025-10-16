@@ -1,0 +1,37 @@
+
+Art to do:
+
+Need Crops and their states
+Mercinium Apple Tree Log and wood variants as well as the Mercinium Apple Tree Sapling
+Jellyinium Apple Tree Log and wood variants as well as the Jellyinium Apple Tree Sapling
+
+Mercinium and Jellyinium Apple Tree Leaves
+Mercinium and Jellyinium Tools and Armor Textures as well as Models
+
+Mercinium Apple and Super Mercinium Apple Textures (They have textures but they need better ones)
+JellyiniumApple and Super Jellyinium Apple Textures (They have textures but they need better ones)
+
+(The Portal will function similarly to a Nether Portal)
+Portal Texture
+(The Portal Block Texture is for the block the portal is mostly made of like how nether portals are made of obsidian)
+Portal block texture
+
+Sour Jello Texture
+
+Gellatin Texture
+
+Functionality to do:
+
+Portal
+
+Make Jellyinium stuff Edible
+
+Sour Jello Enchantment that turns the jellyinium tools/armor into sour jellyinium
+
+Candy dimension
+
+Star Dimension?
+
+Smelting Forge
+
+

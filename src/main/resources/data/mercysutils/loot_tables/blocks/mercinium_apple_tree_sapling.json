@@ -25,22 +25,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stick",
-          "weight": 7,
-          "conditions": []
-        },
-        {
-          "type": "minecraft:item",
           "name": "mercysutils:mercinium_apple_tree_sapling",
           "": "",
           "weight": 1
-        },
-        {
-          "type": "minecraft:item",
-          "name": "mercysutils:mercinium_apple",
-          "": "",
-          "weight": 2
         }
+
       ],
       "conditions": [
         {

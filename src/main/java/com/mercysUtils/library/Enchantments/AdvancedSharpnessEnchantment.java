@@ -46,6 +46,19 @@ public class AdvancedSharpnessEnchantment extends DamageEnchantment{
 //        return
 //    }
 
+    @Override
+    public boolean canEnchant(ItemStack other){
+
+        return this.canApplyAtEnchantingTable(other);
+
+    }
+
+    @Override
+    public boolean canApplyAtEnchantingTable(ItemStack other) {
+
+        return other.canApplyAtEnchantingTable(this);
+    }
+
 
     @Override
     public boolean checkCompatibility(Enchantment other) {

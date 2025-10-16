@@ -1,12 +1,17 @@
 package com.mercysUtils.library;
 
+import com.mercysUtils.library.Blocks.Entity.ModBlockEntities;
 import com.mercysUtils.library.Blocks.ModBlocks;
 import com.mercysUtils.library.Enchantments.ModEnchantments;
 import com.mercysUtils.library.Items.ModItems;
 import com.mercysUtils.library.MiscRegistries.ModCreativeModeTabsRegistry;
+import com.mercysUtils.library.RecipeTypes.ModRecipeRegister;
+import com.mercysUtils.library.Screen.ModMenuTypes;
+import com.mercysUtils.library.Screen.TutorialBlockEntityWorkstationScreen;
 import com.mercysUtils.library.Worldgen.Biomes.ModBiomes;
 import com.mercysUtils.library.Worldgen.Dimension.ModDimension;
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -33,12 +38,17 @@ public class MercysUtils
     {
         IEventBus modEventBus = context.getModEventBus();
 
-        ModEnchantments.ENCHANTMENTS.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
-        ModCreativeModeTabsRegistry.TABS.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
+        ModEnchantments.ENCHANTMENTS.register(modEventBus);
+        ModRecipeRegister.SERIALIZERS.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
         ModBiomes.ELVEN_FOREST.registry();
         ModDimension.MERCYSDIMENSION.registry();
+        ModCreativeModeTabsRegistry.TABS.register(modEventBus);
+
+
 
 
         // Register the commonSetup method for modloading
@@ -80,6 +90,8 @@ public class MercysUtils
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+
+            MenuScreens.register(ModMenuTypes.TUTORIAL_BLOCK_ENTITY_WORKSTATION_MENU.get(), TutorialBlockEntityWorkstationScreen::new);
             // Some client setup code
         }
     }

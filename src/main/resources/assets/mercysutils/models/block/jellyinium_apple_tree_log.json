@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "mercysutils:block/jellyinium_apple_tree_log_top",
+    "side": "mercysutils:block/jellyinium_apple_tree_log_side"
+  }
+}

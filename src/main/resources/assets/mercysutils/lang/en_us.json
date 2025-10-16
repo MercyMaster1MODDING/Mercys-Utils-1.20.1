@@ -13,9 +13,14 @@
   "item.mercysutils.mercinium_leggings": "Mercinium Leggings",
   "item.mercysutils.mercinium_boots": "Mercinium Boots",
 
+  "item.mercysutils.mercinium_apple_tree_sapling": "Mercinium Apple Tree Sapling",
+  "item.mercysutils.mercinium_apple_tree_log": "Mercinium Apple Tree Log",
+
   "item.mercysutils.advanced_sharpness_book": "Advanced Sharpness",
   "enchantment.mercysutils.advanced_sharpness": "Advanced Sharpness",
   "enchantment.mercysutils.tsunamis_reap": "Tsunami's Reap",
+
+  "block.mercysutils.tutorial_block_entity_workstation": "Workstation",
 
   "block.mercysutils.mercinium_ore": "Mercinium Ore",
   "block.mercysutils.jellyinium_ore": "Jellyinium Ore",

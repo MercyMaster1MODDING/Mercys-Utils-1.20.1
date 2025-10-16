@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "axis=y": { "model": "mercysutils:block/jellyinium_apple_tree_log" },
+    "axis=z": { "model": "mercysutils:block/jellyinium_apple_tree_log", "x": 90 },
+    "axis=x": { "model": "mercysutils:block/jellyinium_apple_tree_log", "x": 90, "y": 90 }
+  }
+}
