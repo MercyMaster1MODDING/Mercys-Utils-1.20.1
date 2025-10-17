@@ -3,6 +3,8 @@ package com.mercysUtils.library;
 import com.mercysUtils.library.Blocks.Entity.ModBlockEntities;
 import com.mercysUtils.library.Blocks.ModBlocks;
 import com.mercysUtils.library.Enchantments.ModEnchantments;
+import com.mercysUtils.library.Entity.ModEntity;
+import com.mercysUtils.library.Entity.Renderer.StarGolemRenderer;
 import com.mercysUtils.library.Items.ModItems;
 import com.mercysUtils.library.MiscRegistries.ModCreativeModeTabsRegistry;
 import com.mercysUtils.library.RecipeTypes.ModRecipeRegister;
@@ -12,6 +14,9 @@ import com.mercysUtils.library.Worldgen.Biomes.ModBiomes;
 import com.mercysUtils.library.Worldgen.Dimension.ModDimension;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.model.geom.ModelLayers;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.IronGolemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -40,6 +45,7 @@ public class MercysUtils
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
+        ModEntity.register(modEventBus);
         ModEnchantments.ENCHANTMENTS.register(modEventBus);
         ModRecipeRegister.SERIALIZERS.register(modEventBus);
         ModMenuTypes.register(modEventBus);
@@ -91,7 +97,25 @@ public class MercysUtils
         {
 
             MenuScreens.register(ModMenuTypes.STOVE_TOP_MENU_TYPE.get(), TutorialBlockEntityWorkstationScreen::new);
+
+            event.enqueueWork(() -> {
+                EntityRenderers.register(ModEntity.STAR_GOLEM_ENTITY.get(),
+                        StarGolemRenderer::new);
+            });
+
+
             // Some client setup code
         }
     }
+
+    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+    public static class ModEventBusEvents {
+
+        @SubscribeEvent
+        public static void registerAttributes(net.minecraftforge.event.entity.EntityAttributeCreationEvent event) {
+            event.put(ModEntity.STAR_GOLEM_ENTITY.get(),
+                    com.mercysUtils.library.Entity.Custom.StarGolemEntity.createAttributes().build());
+        }
+    }
+
 }
