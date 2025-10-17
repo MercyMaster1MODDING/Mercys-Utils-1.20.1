@@ -3,6 +3,7 @@ package com.mercysUtils.library.Entity.Client;// Made with Blockbench 5.0.2
 // Paste this class into your mod and generate all required imports
 
 
+import com.mercysUtils.library.MercysUtils;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.HierarchicalModel;
@@ -11,11 +12,17 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.util.Mth;
+import net.minecraft.world.entity.Mob;
+
+import net.minecraft.world.entity.animal.IronGolem;
+import org.jetbrains.annotations.Nullable;
 
 public class StarGolem <T extends Entity> extends HierarchicalModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation("modid", "iron_golem_- converted"), "main");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(MercysUtils.MOD_ID, "star_golem_entity"),  "main");
 	private final ModelPart star_golem;
 	private final ModelPart body;
 	private final ModelPart head;
@@ -58,9 +65,38 @@ public class StarGolem <T extends Entity> extends HierarchicalModel<T> {
 	}
 
 	@Override
-	public void setupAnim(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+		// Head rotation (looking around)
+		this.head.yRot = netHeadYaw * ((float)Math.PI / 180F);
+		this.head.xRot = headPitch * ((float)Math.PI / 180F);
 
+		// Walking animation
+		this.right_leg.xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
+		this.left_leg.xRot = Mth.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;
+
+		// Arm swing animation
+		this.right_arm.xRot = Mth.cos(limbSwing * 0.6662F + (float)Math.PI) * 2.0F * limbSwingAmount * 0.5F;
+		this.left_arm.xRot = Mth.cos(limbSwing * 0.6662F) * 2.0F * limbSwingAmount * 0.5F;
+
+		// Idle arm motion (subtle breathing)
+		this.right_arm.xRot += Mth.sin(ageInTicks * 0.067F) * 0.05F;
+		this.left_arm.xRot -= Mth.sin(ageInTicks * 0.067F) * 0.05F;
+
+		// ----- Attack animation (Iron Golem style) -----
+		if (entity instanceof IronGolem golem) {
+			float attackTime = golem.attackAnim - ageInTicks;
+			if (attackTime > 0.0F) {
+				float f = (1.0F - attackTime / 10.0F);
+				f = Mth.clamp(f, 0.0F, 1.0F);
+				f = f * f;
+				float angle = -(float)Math.PI / 2.0F + f * (float)Math.PI * 1.5F;
+				this.right_arm.xRot = angle;
+				this.left_arm.xRot = angle;
+			}
+		}
 	}
+
+
 
 	@Override
 	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {

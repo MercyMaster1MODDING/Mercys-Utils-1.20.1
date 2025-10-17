@@ -33,7 +33,7 @@ public class StarGolemEntity extends IronGolem { ;
 
         this.goalSelector.addGoal(0, new FloatGoal(this));
 
-        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Player.class, 10, true, false, (entity) -> true));
+        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Player.class, 1, true, false, (entity) -> true));
 
         this.goalSelector.addGoal(1,new MeleeAttackGoal(this, 4, true ));
     }
@@ -43,9 +43,10 @@ public class StarGolemEntity extends IronGolem { ;
                 .add(Attributes.ATTACK_DAMAGE, 15)
                 .add(Attributes.MAX_HEALTH, 200)
                 .add(Attributes.ARMOR, 20)
-                .add(Attributes.ATTACK_SPEED, 0.5)
+                .add(Attributes.ATTACK_SPEED, 0.3)
                 .add(Attributes.FOLLOW_RANGE, 30)
-                .add(Attributes.KNOCKBACK_RESISTANCE, 500);
+                .add(Attributes.KNOCKBACK_RESISTANCE, 500)
+                .add(Attributes.MOVEMENT_SPEED, 0.7);
     }
 
     @Override
