@@ -3,6 +3,7 @@ package com.mercysUtils.library.Datagen;
 import com.mercysUtils.library.MercysUtils;
 import com.mercysUtils.library.Worldgen.Biomes.ModBiomes;
 import com.mercysUtils.library.Worldgen.Biomes.ModConfiguredFeatures;
+import com.mercysUtils.library.Worldgen.Dimension.CandyDimension;
 import com.mercysUtils.library.Worldgen.Dimension.ModDimension;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
@@ -16,9 +17,16 @@ import java.util.concurrent.CompletableFuture;
 
 public class WorldgenDatagen extends DatapackBuiltinEntriesProvider {
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
-            .add(Registries.DIMENSION_TYPE, ModDimension::bootstrapType)
+            .add(Registries.DIMENSION_TYPE, context -> {
+                ModDimension.bootstrapType(context);
+                CandyDimension.bootstrapType(context);
+            })
             .add(Registries.BIOME, ModBiomes::bootstrap)
-            .add(Registries.LEVEL_STEM, ModDimension::bootstrapStem)
+            .add(Registries.LEVEL_STEM, context -> {
+                ModDimension.bootstrapStem(context);
+                CandyDimension.bootstrapStem(context);
+            })
+
             .add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
 
     public WorldgenDatagen(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {

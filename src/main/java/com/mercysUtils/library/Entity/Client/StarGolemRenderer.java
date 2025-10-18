@@ -1,10 +1,9 @@
 package com.mercysUtils.library.Entity.Client;
 
+import com.mercysUtils.library.Entity.Custom.StarGolem;
 import com.mercysUtils.library.Entity.Custom.StarGolemEntity;
-import com.mercysUtils.library.Interfaces.IronGolemInterface;
 import com.mercysUtils.library.MercysUtils;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.IronGolemRenderer;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 

@@ -16,8 +16,13 @@ public class ModBiomes {
     public static final ResourceKey<Biome> ELVEN_FOREST = ResourceKey.create(Registries.BIOME,
             new ResourceLocation(MercysUtils.MOD_ID, "elven_forest"));
 
+    public static final ResourceKey<Biome> CANDY_FOREST = ResourceKey.create(Registries.BIOME,
+            new ResourceLocation(MercysUtils.MOD_ID, "candy_forest"));
+
+
     public static void bootstrap(BootstapContext<Biome> context) {
         context.register(ModBiomes.ELVEN_FOREST, elvenForest(context));
+        context.register(ModBiomes.CANDY_FOREST, candyForest(context));
     }
 
     public static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder) {
@@ -26,6 +31,7 @@ public class ModBiomes {
         BiomeDefaultFeatures.addDefaultOres(builder, true);
     }
 
+    //Elven Forest Biome
     public static Biome elvenForest(BootstapContext<Biome> context) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
@@ -43,6 +49,37 @@ public class ModBiomes {
 
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .downfall(0.8f)
+                .temperature(0.7f)
+                .generationSettings(biomeBuilder.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .waterColor(0xe82e3b)
+                        .waterFogColor(0xbf1b26)
+                        .skyColor(0x30c918)
+                        .grassColorOverride(0xFF2400)
+                        .foliageColorOverride(0xd203fc)
+                        .fogColor(0x22a1e6)
+                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                        .backgroundMusic(null).build())
+                .build();
+    }
+
+    //Candy Forest Biome
+    public static Biome candyForest(BootstapContext<Biome> context) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+        //we need to follow the same order as vanilla biomes for the BiomeDefaultFeatures
+        globalOverworldGeneration(biomeBuilder);
+
+        //biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_PLAINS);
+
+        //BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)

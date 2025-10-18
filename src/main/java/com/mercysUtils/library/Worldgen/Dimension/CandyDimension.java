@@ -11,7 +11,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.biome.*;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Climate;
+import net.minecraft.world.level.biome.FixedBiomeSource;
+import net.minecraft.world.level.biome.MultiNoiseBiomeSource;
 import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
@@ -21,17 +24,17 @@ import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
 import java.util.List;
 import java.util.OptionalLong;
 
-public class ModDimension {
-    public static final ResourceKey<LevelStem> MERCYSDIMENSION = ResourceKey.create(Registries.LEVEL_STEM,
-            new ResourceLocation(MercysUtils.MOD_ID, "mercys_dimension"));
-    public static final ResourceKey<Level> MERCYS_DIMENSION_LEVEL_KEY = ResourceKey.create(Registries.DIMENSION,
-            new ResourceLocation(MercysUtils.MOD_ID, "mercys_dimension_level_key"));
-    public static final ResourceKey<DimensionType> MERCYS_DIMENSION_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE,
-            new ResourceLocation(MercysUtils.MOD_ID, "mercys_dimension_type"));
+public class CandyDimension {
+    public static final ResourceKey<LevelStem> CANDY_DIMENSION = ResourceKey.create(Registries.LEVEL_STEM,
+            new ResourceLocation(MercysUtils.MOD_ID, "candy_dimension"));
+    public static final ResourceKey<Level> CANDY_DIMENSION_LEVEL_KEY = ResourceKey.create(Registries.DIMENSION,
+            new ResourceLocation(MercysUtils.MOD_ID, "candy_dimension_level_key"));
+    public static final ResourceKey<DimensionType> CANDY_DIMENSION_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE,
+            new ResourceLocation(MercysUtils.MOD_ID, "candy_dimension_type"));
 
 
     public static void bootstrapType(BootstapContext<DimensionType> context) {
-        context.register(MERCYS_DIMENSION_TYPE, new DimensionType(
+        context.register(CANDY_DIMENSION_TYPE, new DimensionType(
                 OptionalLong.of(12000), // fixedTime
                 false, // hasSkylight
                 false, // hasCeiling
@@ -55,21 +58,21 @@ public class ModDimension {
         HolderGetter<NoiseGeneratorSettings> noiseGenSettings = context.lookup(Registries.NOISE_SETTINGS);
 
         NoiseBasedChunkGenerator wrappedChunkGenerator = new NoiseBasedChunkGenerator(
-                new FixedBiomeSource(biomeRegistry.getOrThrow(ModBiomes.ELVEN_FOREST)),
+                new FixedBiomeSource(biomeRegistry.getOrThrow(ModBiomes.CANDY_FOREST)),
                 noiseGenSettings.getOrThrow(NoiseGeneratorSettings.OVERWORLD));
 
         NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
                 MultiNoiseBiomeSource.createFromList(
                         new Climate.ParameterList<>(List.of(Pair.of(
-                                        Climate.parameters(0.0F, 0.0F, 0.0F, -2F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.ELVEN_FOREST))
+                                        Climate.parameters(0.0F, 0.0F, 0.0F, -2F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.CANDY_FOREST))
 //                                Pair.of(
 //                                        Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(Biomes.BIRCH_FOREST))
 
                         ))),
                 noiseGenSettings.getOrThrow(NoiseGeneratorSettings.OVERWORLD));
 
-        LevelStem stem = new LevelStem(dimTypes.getOrThrow(ModDimension.MERCYS_DIMENSION_TYPE), noiseBasedChunkGenerator);
+        LevelStem stem = new LevelStem(dimTypes.getOrThrow(CandyDimension.CANDY_DIMENSION_TYPE), noiseBasedChunkGenerator);
 
-        context.register(MERCYSDIMENSION, stem);
+        context.register(CANDY_DIMENSION, stem);
     }
 }

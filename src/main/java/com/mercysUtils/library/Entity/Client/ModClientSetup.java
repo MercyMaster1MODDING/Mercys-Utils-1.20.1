@@ -1,5 +1,8 @@
 package com.mercysUtils.library.Entity.Client;
 
+import com.mercysUtils.library.Entity.Custom.StarGolem;
+import com.mercysUtils.library.Entity.Villagers.CandyMerchant;
+import com.mercysUtils.library.Entity.Villagers.CandyMerchantRenderer;
 import com.mercysUtils.library.MercysUtils;
 import com.mercysUtils.library.Entity.ModEntity;
 import com.mercysUtils.library.Screen.ModMenuTypes;
@@ -37,6 +40,7 @@ public class ModClientSetup {
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(StarGolem.LAYER_LOCATION, StarGolem::createBodyLayer);
+        event.registerLayerDefinition(CandyMerchant.LAYER_LOCATION, CandyMerchant::createBodyLayer);
     }
 
     /**
@@ -45,5 +49,6 @@ public class ModClientSetup {
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntity.STAR_GOLEM_ENTITY.get(), StarGolemRenderer::new);
+        event.registerEntityRenderer(ModEntity.CANDY_MERCHANT_ENTITY.get(), CandyMerchantRenderer::new);
     }
 }

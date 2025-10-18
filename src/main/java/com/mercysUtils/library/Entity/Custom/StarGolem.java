@@ -1,4 +1,4 @@
-package com.mercysUtils.library.Entity.Client;// Made with Blockbench 5.0.2
+package com.mercysUtils.library.Entity.Custom;// Made with Blockbench 5.0.2
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
@@ -14,11 +14,8 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.util.Mth;
-import net.minecraft.world.entity.Mob;
 
 import net.minecraft.world.entity.animal.IronGolem;
-import org.jetbrains.annotations.Nullable;
 
 public class StarGolem <T extends Entity> extends HierarchicalModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
