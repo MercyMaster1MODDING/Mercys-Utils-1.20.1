@@ -3,6 +3,9 @@ package com.mercysUtils.library;
 import com.mercysUtils.library.Blocks.Entity.ModBlockEntities;
 import com.mercysUtils.library.Blocks.ModBlocks;
 import com.mercysUtils.library.Enchantments.ModEnchantments;
+import com.mercysUtils.library.Entity.Client.StarGolem;
+import com.mercysUtils.library.Entity.ModEntity;
+import com.mercysUtils.library.Entity.Client.StarGolemRenderer;
 import com.mercysUtils.library.Items.ModItems;
 import com.mercysUtils.library.MiscRegistries.ModCreativeModeTabsRegistry;
 import com.mercysUtils.library.RecipeTypes.ModRecipeRegister;
@@ -12,7 +15,9 @@ import com.mercysUtils.library.Worldgen.Biomes.ModBiomes;
 import com.mercysUtils.library.Worldgen.Dimension.ModDimension;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -40,6 +45,7 @@ public class MercysUtils
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
+        ModEntity.register(modEventBus);
         ModEnchantments.ENCHANTMENTS.register(modEventBus);
         ModRecipeRegister.SERIALIZERS.register(modEventBus);
         ModMenuTypes.register(modEventBus);
@@ -82,16 +88,15 @@ public class MercysUtils
         // Do something when the server starts
     }
 
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents
-    {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
 
-            MenuScreens.register(ModMenuTypes.STOVE_TOP_MENU_TYPE.get(), TutorialBlockEntityWorkstationScreen::new);
-            // Some client setup code
+    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+    public static class ModEventBusEvents {
+
+        @SubscribeEvent
+        public static void registerAttributes(net.minecraftforge.event.entity.EntityAttributeCreationEvent event) {
+            event.put(ModEntity.STAR_GOLEM_ENTITY.get(),
+                    com.mercysUtils.library.Entity.Custom.StarGolemEntity.createAttributes().build());
         }
     }
+
 }
