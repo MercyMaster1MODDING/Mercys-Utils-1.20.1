@@ -6,13 +6,17 @@ import com.mercysUtils.library.FoodItems.ModFoods;
 import com.mercysUtils.library.MercysUtils;
 import com.mercysUtils.library.MiscRegistries.ModArmorMaterialRegistry;
 import com.mercysUtils.library.tiers.ModTiers;
+import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.function.Consumer;
 
 public class ModItems {
 
@@ -34,6 +38,26 @@ public class ModItems {
 
     public static final RegistryObject<Item> GELATIN = ITEMS.register("gelatin",
             () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> STAR_FRAGMENT = ITEMS.register("star_fragment",
+            () -> new Item(new Item.Properties()
+                    .stacksTo(128)));
+    public static final RegistryObject<Item> CANDY_FRAGMENT = ITEMS.register("candy_fragment",
+            () -> new Item(new Item.Properties()
+                    .stacksTo(128)));
+
+    //Register Shields
+    public static final RegistryObject<Item> ANTI_GOLEM_SHIELD = ITEMS.register("anti_golem_shield",
+            () -> new UnbreakableShieldItems(new Item.Properties()));
+
+    public static final RegistryObject<Item> MERCINIUM_SHIELD = ITEMS.register("mercinium_shield",
+            () -> new UnbreakableShieldItems(new Item.Properties()));
+
+    public static final RegistryObject<Item> JELLYINIUM_SHIELD = ITEMS.register("jellyinium_shield",
+            () -> new UnbreakableShieldItems(new Item.Properties()));
+
+    public static final RegistryObject<Item> NETHERITE_SHIELD = ITEMS.register("netherite_shield",
+            () -> new ModShieldItems(new Item.Properties().defaultDurability(600)));
 
 
     //Register FoodItems

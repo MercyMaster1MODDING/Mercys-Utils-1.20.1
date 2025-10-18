@@ -27,10 +27,14 @@ public class ModCreativeModeTabsRegistry {
                     .icon(() -> new ItemStack(ModItems.RAW_MERCINIUM.get()))
                     .displayItems((itemDisplayParameters, output) -> {
                         //Add items to the tab
-
-                        //Ores
                         output.accept(ModItems.RAW_MERCINIUM.get());
                         output.accept(ModItems.RAW_JELLYINIUM.get());
+                        output.accept(ModItems.STAR_FRAGMENT.get());
+                        output.accept(ModItems.CANDY_FRAGMENT.get());
+
+
+                        //Ores
+
                         output.accept(ModItems.MERCINIUM_INGOT.get());
                         output.accept(ModItems.JELLYINIUM_INGOT.get());
 //                        output.accept(ModBlocks.MERCINIUM_ORE.get());
@@ -41,6 +45,12 @@ public class ModCreativeModeTabsRegistry {
                         output.accept(ModItems.MERCINIUM_PICKAXE.get());
                         output.accept(ModItems.JELLYINIUM_SWORD.get());
                         output.accept(ModItems.JELLYINIUM_PICKAXE.get());
+
+                        //Shields
+                        output.accept(ModItems.ANTI_GOLEM_SHIELD.get());
+                        output.accept(ModItems.MERCINIUM_SHIELD.get());
+                        output.accept(ModItems.JELLYINIUM_SHIELD.get());
+                        output.accept(ModItems.NETHERITE_SHIELD.get());
 
                         //Armor
                         output.accept(ModItems.MERCINIUM_HELMET.get());

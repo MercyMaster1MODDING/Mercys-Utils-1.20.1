@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "mercysutils:anti_golem_shield",
+    "mercysutils:mercinium_shield",
+    "mercysutils:jellyinium_shield",
+    "mercysutils:netherite_shield"
+  ]
+}
