@@ -31,6 +31,7 @@ public class ModCreativeModeTabsRegistry {
                         output.accept(ModItems.RAW_JELLYINIUM.get());
                         output.accept(ModItems.STAR_FRAGMENT.get());
                         output.accept(ModItems.CANDY_FRAGMENT.get());
+                        output.accept(ModItems.DIMENSIONAL_TELEPORTER.get());
 
 
                         //Ores
@@ -40,11 +41,12 @@ public class ModCreativeModeTabsRegistry {
 //                        output.accept(ModBlocks.MERCINIUM_ORE.get());
 //                        output.accept(ModBlocks.JELLYINIUM_ORE.get());
 
-                        //Tools
+                        //Tools and Weapons
                         output.accept(ModItems.MERCINIUM_SWORD.get());
                         output.accept(ModItems.MERCINIUM_PICKAXE.get());
                         output.accept(ModItems.JELLYINIUM_SWORD.get());
                         output.accept(ModItems.JELLYINIUM_PICKAXE.get());
+                        output.accept(ModItems.POSEIDONS_TRIDENT.get());
 
                         //Shields
                         output.accept(ModItems.ANTI_GOLEM_SHIELD.get());

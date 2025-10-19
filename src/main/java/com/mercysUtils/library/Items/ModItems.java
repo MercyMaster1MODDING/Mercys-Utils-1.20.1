@@ -30,10 +30,10 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_JELLYINIUM = ITEMS.register("raw_jellyinium",
             () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> JELLYINIUM_INGOT = ITEMS.register("jellyinium_ingot",
+    public static final RegistryObject<Item> MERCINIUM_INGOT = ITEMS.register("mercinium_ingot",
             () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> MERCINIUM_INGOT = ITEMS.register("mercinium_ingot",
+    public static final RegistryObject<Item> JELLYINIUM_INGOT = ITEMS.register("jellyinium_ingot",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> GELATIN = ITEMS.register("gelatin",
@@ -45,6 +45,9 @@ public class ModItems {
     public static final RegistryObject<Item> CANDY_FRAGMENT = ITEMS.register("candy_fragment",
             () -> new Item(new Item.Properties()
                     .stacksTo(128)));
+
+    public static final RegistryObject<Item> DIMENSIONAL_TELEPORTER = ITEMS.register("dimensional_teleporter",
+            () -> new DimensionalTeleporter(new Item.Properties()));
 
     //Register Shields
     public static final RegistryObject<Item> ANTI_GOLEM_SHIELD = ITEMS.register("anti_golem_shield",
@@ -94,6 +97,10 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.MERCINIUM_APPLE_TREE_SAPLING.get(), new Item.Properties()));
 
     //Register Tools
+    public static final RegistryObject<TridentItem> POSEIDONS_TRIDENT = ITEMS.register("poseidons_trident",
+            () -> new ModTridentItem(
+                    new Item.Properties()));
+
     public static final RegistryObject<SwordItem> MERCINIUM_SWORD = ITEMS.register("mercinium_sword",
             () -> new SwordItem(
                     ModTiers.MERCINIUM_TIER,

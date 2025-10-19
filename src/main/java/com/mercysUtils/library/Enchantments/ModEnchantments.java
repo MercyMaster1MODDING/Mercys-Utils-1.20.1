@@ -3,6 +3,7 @@ package com.mercysUtils.library.Enchantments;
 import com.mercysUtils.library.MercysUtils;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -17,6 +18,14 @@ public class ModEnchantments extends Enchantments {
 
     public static final RegistryObject<Enchantment> TSUNAMIS_REAP_ENCHANT =
             ENCHANTMENTS.register("tsunamis_reap", TsunamisReapEnchantment::new);
+
+    public static final RegistryObject<Enchantment> TRUE_DAMAGE_ENCHANTMENT =
+            ENCHANTMENTS.register("true_damage_enchantment", TrueDamageEnchantment::new);
+
+
+    public static void register(IEventBus eventBus){
+        ENCHANTMENTS.register(eventBus);
+    }
 
 
 }

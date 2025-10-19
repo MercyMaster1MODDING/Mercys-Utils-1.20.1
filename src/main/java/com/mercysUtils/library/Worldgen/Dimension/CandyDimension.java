@@ -28,7 +28,7 @@ public class CandyDimension {
     public static final ResourceKey<LevelStem> CANDY_DIMENSION = ResourceKey.create(Registries.LEVEL_STEM,
             new ResourceLocation(MercysUtils.MOD_ID, "candy_dimension"));
     public static final ResourceKey<Level> CANDY_DIMENSION_LEVEL_KEY = ResourceKey.create(Registries.DIMENSION,
-            new ResourceLocation(MercysUtils.MOD_ID, "candy_dimension_level_key"));
+            new ResourceLocation(MercysUtils.MOD_ID, "candy_dimension"));
     public static final ResourceKey<DimensionType> CANDY_DIMENSION_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE,
             new ResourceLocation(MercysUtils.MOD_ID, "candy_dimension_type"));
 

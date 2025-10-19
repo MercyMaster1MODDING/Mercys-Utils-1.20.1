@@ -2,9 +2,11 @@ package com.mercysUtils.library;
 
 import com.mercysUtils.library.Blocks.Entity.ModBlockEntities;
 import com.mercysUtils.library.Blocks.ModBlocks;
+import com.mercysUtils.library.CustomEffects.ModEffects;
 import com.mercysUtils.library.Enchantments.ModEnchantments;
 import com.mercysUtils.library.Entity.ModEntity;
 import com.mercysUtils.library.Entity.Villagers.ModVillagers;
+import com.mercysUtils.library.Events.AttackDamageHandler;
 import com.mercysUtils.library.Items.ModItems;
 import com.mercysUtils.library.MiscRegistries.ModCreativeModeTabsRegistry;
 import com.mercysUtils.library.RecipeTypes.ModRecipeRegister;
@@ -36,6 +38,7 @@ public class MercysUtils
     {
         IEventBus modEventBus = context.getModEventBus();
 
+        ModEffects.EFFECTS.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
@@ -61,6 +64,8 @@ public class MercysUtils
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
+        //Register Attack Handler
+        MinecraftForge.EVENT_BUS.register(AttackDamageHandler.class);
 
 
     }

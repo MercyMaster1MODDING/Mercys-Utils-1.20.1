@@ -4,6 +4,14 @@
   "item.mercysutils.raw_jellyinium": "Raw Jellyinium",
   "item.mercysutils.mercinium_ingot": "Mercinium Ingot",
   "item.mercysutils.jellyinium_ingot": "Jellyinium Ingot",
+  "item.mercysutils.gelatin": "Gelatin",
+  "item.mercysutils.star_fragment": "Star Fragment",
+  "item.mercysutils.candy_fragment": "Candy Fragment",
+  "item.mercysutils.dimensional_teleporter": "Dimensional Teleporter",
+  "item.mercysutils.anti_golem_shield": "Anti-Golem Shield",
+  "item.mercysutils.mercinium_shield": "Mercinium Shield",
+  "item.mercysutils.jellyinium_shield": "Jellyinium Shield",
+  "item.mercysutils.netherite_shield": "Netherite Shield",
   "item.mercysutils.mercinium_sword": "Mercinium Sword",
   "item.mercysutils.jellyinium_sword": "Jellyinium Sword",
   "item.mercysutils.mercinium_pickaxe": "Mercinium Pickaxe",
@@ -12,15 +20,24 @@
   "item.mercysutils.mercinium_chestplate": "Mercinium Chestplate",
   "item.mercysutils.mercinium_leggings": "Mercinium Leggings",
   "item.mercysutils.mercinium_boots": "Mercinium Boots",
+  "item.mercysutils.poseidons_trident": "Poseidon's Trident",
+  "item.mercysutils.jello": "Jell-O",
+  "item.mercysutils.jello_pie": "Jell-O Pie",
+  "item.mercysutils.mercinium_apple": "Mercinium Apple",
+  "item.mercysutils.super_mercinium_apple": "Mercinium Apple",
 
-  "item.mercysutils.mercinium_apple_tree_sapling": "Mercinium Apple Tree Sapling",
-  "item.mercysutils.mercinium_apple_tree_log": "Mercinium Apple Tree Log",
+
+
+
+  "block.mercysutils.mercinium_apple_tree_sapling": "Mercinium Apple Tree Sapling",
+  "block.mercysutils.mercinium_apple_tree_log": "Mercinium Apple Tree Log",
 
   "item.mercysutils.advanced_sharpness_book": "Advanced Sharpness",
   "enchantment.mercysutils.advanced_sharpness": "Advanced Sharpness",
   "enchantment.mercysutils.tsunamis_reap": "Tsunami's Reap",
+  "enchantment.mercysutils.true_damage_enchantment": "True Damage",
 
-  "block.mercysutils.tutorial_block_entity_workstation": "Workstation",
+  "block.mercysutils.stove_top_block": "Super Stove",
 
   "block.mercysutils.mercinium_ore": "Mercinium Ore",
   "block.mercysutils.jellyinium_ore": "Jellyinium Ore",
