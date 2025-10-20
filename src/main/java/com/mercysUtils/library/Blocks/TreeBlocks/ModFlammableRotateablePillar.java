@@ -41,12 +41,12 @@ public class ModFlammableRotateablePillar extends RotatedPillarBlock {
             if (state.is(ModBlocks.MERCINIUM_APPLE_WOOD.get())){
                 return ModBlocks.STRIPPED_MERCINIUM_APPLE_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
-            if (state.is(ModBlocks.JELLYINIUM_APPLE_TREE_LOG.get())){
-                return ModBlocks.STRIPPED_JELLYINIUM_APPLE_TREE_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            if (state.is(ModBlocks.CANDY_APPLE_TREE_LOG.get())){
+                return ModBlocks.STRIPPED_CANDY_APPLE_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
 
-            if (state.is(ModBlocks.JELLYINIUM_APPLE_WOOD.get())){
-                return ModBlocks.STRIPPED_JELLYINIUM_APPLE_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            if (state.is(ModBlocks.CANDY_APPLE_WOOD.get())){
+                return ModBlocks.STRIPPED_CANDY_APPLE_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
 
         }

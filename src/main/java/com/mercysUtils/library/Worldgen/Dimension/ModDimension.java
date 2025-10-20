@@ -33,14 +33,14 @@ public class ModDimension {
     public static void bootstrapType(BootstapContext<DimensionType> context) {
         context.register(MERCYS_DIMENSION_TYPE, new DimensionType(
                 OptionalLong.of(12000), // fixedTime
-                false, // hasSkylight
+                true, // hasSkylight
                 false, // hasCeiling
                 false, // ultraWarm
-                false, // natural
+                true, // natural
                 1.0, // coordinateScale
                 true, // bedWorks
                 false, // respawnAnchorWorks
-                0, // minY
+                -64, // minY
                 256, // height
                 256, // logicalHeight
                 BlockTags.INFINIBURN_OVERWORLD, // infiniburn
@@ -61,7 +61,16 @@ public class ModDimension {
         NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
                 MultiNoiseBiomeSource.createFromList(
                         new Climate.ParameterList<>(List.of(Pair.of(
-                                        Climate.parameters(0.0F, 0.0F, 0.0F, -2F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(ModBiomes.ELVEN_FOREST))
+                                        Climate.parameters(
+                                                0.7F,
+                                                0.8F,
+                                                0.2F,
+                                                1.0F,
+                                                0.0F,
+                                                0.0F,
+                                                0.0F),
+                                        biomeRegistry.getOrThrow(ModBiomes.ELVEN_FOREST))
+
 //                                Pair.of(
 //                                        Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(Biomes.BIRCH_FOREST))
 

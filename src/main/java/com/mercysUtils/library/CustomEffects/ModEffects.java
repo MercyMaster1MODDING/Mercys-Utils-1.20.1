@@ -3,10 +3,8 @@ package com.mercysUtils.library.CustomEffects;
 import com.mercysUtils.library.MercysUtils;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModEffects {
@@ -19,6 +17,9 @@ public class ModEffects {
 
     public static final RegistryObject<MobEffect> BLEEDING_EFFECT =
             EFFECTS.register("bleeding_effect", Bleeding::new);
+
+    public static final RegistryObject<MobEffect> PHANTOM_TAKEOVER_EFFECT =
+            EFFECTS.register("phantom_takeover_effect", PhantomTakeover::new);
 
 
     public static void register(IEventBus eventBus){

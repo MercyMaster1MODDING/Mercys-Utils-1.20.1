@@ -46,7 +46,7 @@ public class AttackDamageHandler {
 
             // True (armor-bypassing) portion
             DamageSource trueSource = ModDamageTypes.TRUE_DAMAGE(serverLevel, player);
-            target.hurt(trueSource, truePart * 2);
+            target.hurt(trueSource, truePart);
 
 //        // Optional: particles for feedback
 //        serverLevel.sendParticles(ParticleTypes.CRIT,
@@ -54,10 +54,10 @@ public class AttackDamageHandler {
 //                5, 0.2, 0.2, 0.2, 0.01);
 
             // Optional: action bar message for player
-//            player.displayClientMessage(
-//                    Component.literal("§cTrue Damage: §f" + String.format("%.1f", truePart)),
-//                    true
-//            );
+            player.displayClientMessage(
+                    Component.literal("§cTrue Damage: §f" + String.format("%.1f", truePart)),
+                    true
+            );
         }
         else {
             return;

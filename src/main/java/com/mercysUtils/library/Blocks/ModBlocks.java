@@ -2,7 +2,7 @@ package com.mercysUtils.library.Blocks;
 
 import com.mercysUtils.library.Blocks.Custom.StoveTopClass;
 import com.mercysUtils.library.Blocks.TreeBlocks.ModFlammableRotateablePillar;
-import com.mercysUtils.library.Datagen.Trees.JellyiniumAppleTree;
+import com.mercysUtils.library.Datagen.Trees.CandyAppleTree;
 import com.mercysUtils.library.Datagen.Trees.MerciniumAppleTree;
 import com.mercysUtils.library.MercysUtils;
 import net.minecraft.core.BlockPos;
@@ -106,31 +106,31 @@ public class ModBlocks extends Blocks {
                     return 30;
                 }
             });
-    public static final RegistryObject<Block> JELLYINIUM_APPLE_TREE_SAPLING = BLOCKS.register("jellyinium_apple_tree_sapling",
-            () -> new SaplingBlock(new JellyiniumAppleTree(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> CANDY_APPLE_TREE_SAPLING = BLOCKS.register("candy_apple_tree_sapling",
+            () -> new SaplingBlock(new CandyAppleTree(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
     //Register Wood Blocks
-    public static final RegistryObject<Block> JELLYINIUM_APPLE_TREE_LOG = BLOCKS.register("jellyinium_apple_tree_log",
+    public static final RegistryObject<Block> CANDY_APPLE_TREE_LOG = BLOCKS.register("candy_apple_tree_log",
             () -> new ModFlammableRotateablePillar(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
                     .strength(3)
                     .requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> JELLYINIUM_APPLE_WOOD = BLOCKS.register("jellyinium_apple_tree_wood",
+    public static final RegistryObject<Block> CANDY_APPLE_WOOD = BLOCKS.register("candy_apple_tree_wood",
             () -> new ModFlammableRotateablePillar(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)
                     .strength(3)
                     .requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> STRIPPED_JELLYINIUM_APPLE_TREE_LOG = BLOCKS.register("stripped_jellyinium_apple_tree_log",
+    public static final RegistryObject<Block> STRIPPED_CANDY_APPLE_TREE_LOG = BLOCKS.register("stripped_candy_apple_tree_log",
             () -> new ModFlammableRotateablePillar(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)
                     .strength(3)
                     .requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> STRIPPED_JELLYINIUM_APPLE_WOOD = BLOCKS.register("stripped_jellyinium_apple_wood",
+    public static final RegistryObject<Block> STRIPPED_CANDY_APPLE_WOOD = BLOCKS.register("stripped_candy_apple_wood",
             () -> new ModFlammableRotateablePillar(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)
                     .strength(3)
                     .requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> JELLYINIUM_APPLE_TREE_PLANKS = BLOCKS.register("jellyinium_apple_tree_planks",
+    public static final RegistryObject<Block> CANDY_APPLE_TREE_PLANKS = BLOCKS.register("candy_apple_tree_planks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)){
 
                 @Override
@@ -151,7 +151,7 @@ public class ModBlocks extends Blocks {
                 }
             });
 
-    public static final RegistryObject<LeavesBlock> JELLYINIUM_APPLE_TREE_LEAVES = BLOCKS.register("jellyinium_apple_tree_leaves",
+    public static final RegistryObject<LeavesBlock> CANDY_APPLE_TREE_LEAVES = BLOCKS.register("candy_apple_tree_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)){
 
                 @Override

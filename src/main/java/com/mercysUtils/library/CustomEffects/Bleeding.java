@@ -11,7 +11,7 @@ public class Bleeding extends MobEffect {
     public static int bleeding_interval = 4;
 
     protected Bleeding() {
-        super(MobEffectCategory.BENEFICIAL, 0x3d9fc3);
+        super(MobEffectCategory.HARMFUL, 0x3d9fc3);
     }
 
     @Override

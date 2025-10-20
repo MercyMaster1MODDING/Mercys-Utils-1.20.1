@@ -3,6 +3,7 @@ package com.mercysUtils.library.Datagen;
 import com.mercysUtils.library.MercysUtils;
 import com.mercysUtils.library.Worldgen.Biomes.ModBiomes;
 import com.mercysUtils.library.Worldgen.Biomes.ModConfiguredFeatures;
+import com.mercysUtils.library.Worldgen.Biomes.ModPlacedFeatures;
 import com.mercysUtils.library.Worldgen.Dimension.CandyDimension;
 import com.mercysUtils.library.Worldgen.Dimension.ModDimension;
 import net.minecraft.core.HolderLookup;
@@ -27,7 +28,8 @@ public class WorldgenDatagen extends DatapackBuiltinEntriesProvider {
                 CandyDimension.bootstrapStem(context);
             })
 
-            .add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
+            .add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap)
+            .add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
 
     public WorldgenDatagen(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, BUILDER, Set.of(MercysUtils.MOD_ID));

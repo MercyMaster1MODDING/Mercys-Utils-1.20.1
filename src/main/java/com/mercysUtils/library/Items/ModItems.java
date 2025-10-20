@@ -96,6 +96,9 @@ public class ModItems {
     public static final RegistryObject<BlockItem> MERCINIUM_APPLE_TREE_SAPLING = ITEMS.register("mercinium_apple_tree_sapling",
             () -> new BlockItem(ModBlocks.MERCINIUM_APPLE_TREE_SAPLING.get(), new Item.Properties()));
 
+    public static final RegistryObject<BlockItem> CANDY_APPLE_TREE_SAPLING = ITEMS.register("candy_apple_tree_sapling",
+            () -> new BlockItem(ModBlocks.CANDY_APPLE_TREE_SAPLING.get(), new Item.Properties()));
+
     //Register Tools
     public static final RegistryObject<TridentItem> POSEIDONS_TRIDENT = ITEMS.register("poseidons_trident",
             () -> new ModTridentItem(
