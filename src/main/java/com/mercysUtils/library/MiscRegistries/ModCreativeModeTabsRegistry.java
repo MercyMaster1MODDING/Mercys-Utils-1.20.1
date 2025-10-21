@@ -1,18 +1,13 @@
 package com.mercysUtils.library.MiscRegistries;
 
 import com.mercysUtils.library.Blocks.ModBlocks;
-import com.mercysUtils.library.Enchantments.AdvancedSharpnessEnchantment;
-import com.mercysUtils.library.Enchantments.ModEnchantments;
-import com.mercysUtils.library.FoodItems.ModFoods;
 import com.mercysUtils.library.Items.ModItems;
 import com.mercysUtils.library.MercysUtils;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -74,9 +69,13 @@ public class ModCreativeModeTabsRegistry {
 
                         //Block Entities
                         output.accept(ModBlocks.STOVE_TOP_BLOCK.get());
+                        output.accept(ModBlocks.AUGMENT_TABLE_BLOCK.get());
 
 //                        Enchantments
 //                        output.accept(ModItems.ADVANCED_SHARPNESS_BOOK.get());
+
+                        //Augments
+                        output.accept(ModItems.SLOW_FALLING_AUGMENT.get());
 
 
                     })

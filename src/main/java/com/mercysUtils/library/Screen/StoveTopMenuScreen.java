@@ -9,12 +9,12 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class TutorialBlockEntityWorkstationScreen extends AbstractContainerScreen<StoveTopMenu> {
+public class StoveTopMenuScreen extends AbstractContainerScreen<StoveTopMenu> {
 
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(MercysUtils.MOD_ID, "textures/gui/tutorial_crafting_workstation_gui.png");
 
-    public TutorialBlockEntityWorkstationScreen(StoveTopMenu menu, Inventory inventory, Component title) {
+    public StoveTopMenuScreen(StoveTopMenu menu, Inventory inventory, Component title) {
         super(menu, inventory, title);
         this.imageWidth = 176; // set width and height to match your texture
         this.imageHeight = 166;

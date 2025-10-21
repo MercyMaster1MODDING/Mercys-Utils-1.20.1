@@ -1,0 +1,43 @@
+package com.mercysUtils.library.Items.Augments;
+
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+
+/**
+ * Base class for all augments.
+ * Each augment can define its own behavior when applied, removed, or ticking.
+ */
+public abstract class ModAugments extends Item {
+
+    private final ResourceLocation id;
+    public final int tier;
+    private boolean hasAugments = false;
+
+    public ModAugments(Properties properties, ResourceLocation id, int tier) {
+        super(properties);
+        this.id = id;
+        this.tier = tier;
+    }
+
+    public ResourceLocation getId() { return id; }
+
+    public int getTier() { return tier; }
+
+    public boolean hasAugments() { return hasAugments; }
+
+    public void setHasAugments(boolean hasAugments) {
+        this.hasAugments = hasAugments;
+    }
+
+    // --- Abstract methods that subclasses must implement ---
+
+    /** Called when the augment is applied to a tool/armor item. */
+    public abstract void onApply(ItemStack toolStack);
+
+    /** Called when the augment is removed from a tool/armor item. */
+    public abstract void onRemove(ItemStack toolStack);
+
+    /** Called every tick if this augment is active on an item. */
+    public void onTick(ItemStack toolStack) {}
+}

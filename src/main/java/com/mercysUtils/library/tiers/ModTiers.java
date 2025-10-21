@@ -13,17 +13,17 @@ public class ModTiers {
             40f,
             0,
             25,
-            ModTags.NEEDS_MERCINIUM_TOOL,
+            ModTags.Blocks.NEEDS_MERCINIUM_TOOL,
             () -> Ingredient.of(ModItems.MERCINIUM_INGOT.get())
     );
 
     public static final ForgeTier JELLYINIUM_TIER = new ForgeTier(
             5,
             2500,
-            0f,
+            40f,
             0,
             25,
-            ModTags.NEEDS_JELLYINIUM_TOOL,
+            ModTags.Blocks.NEEDS_JELLYINIUM_TOOL,
             () -> Ingredient.of(ModItems.JELLYINIUM_INGOT.get())
 
 
