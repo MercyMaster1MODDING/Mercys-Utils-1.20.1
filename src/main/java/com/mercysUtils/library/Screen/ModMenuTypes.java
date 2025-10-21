@@ -1,5 +1,6 @@
 package com.mercysUtils.library.Screen;
 
+import com.mercysUtils.library.Blocks.Custom.AugmentTableClass;
 import com.mercysUtils.library.MercysUtils;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
@@ -18,6 +19,9 @@ public class ModMenuTypes {
 
     public static final RegistryObject<MenuType<StoveTopMenu>> STOVE_TOP_MENU_TYPE =
             registerMenuType("stove_top_menu", StoveTopMenu::new);
+
+    public static final RegistryObject<MenuType<AugmentTableMenu>> AUGMENT_TABLE_MENU_TYPE =
+            registerMenuType("augment_table_menu", AugmentTableMenu::new);
 
 
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(String name,

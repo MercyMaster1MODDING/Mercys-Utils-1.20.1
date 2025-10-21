@@ -3,6 +3,7 @@ package com.mercysUtils.library.Items;
 import com.mercysUtils.library.Blocks.Entity.ModBlockEntities;
 import com.mercysUtils.library.Blocks.ModBlocks;
 import com.mercysUtils.library.FoodItems.ModFoods;
+import com.mercysUtils.library.Items.Augments.AugmentTypes.SlowFallingAugment;
 import com.mercysUtils.library.MercysUtils;
 import com.mercysUtils.library.MiscRegistries.ModArmorMaterialRegistry;
 import com.mercysUtils.library.tiers.ModTiers;
@@ -122,7 +123,7 @@ public class ModItems {
             () -> new SwordItem(
                     ModTiers.JELLYINIUM_TIER,
                     10,
-                    -2.4f,
+                    -3f,
                     new Item.Properties()));
 
     public static final RegistryObject<PickaxeItem> JELLYINIUM_PICKAXE = ITEMS.register("jellyinium_pickaxe",
@@ -160,6 +161,14 @@ public class ModItems {
     public static final RegistryObject<Item> STOVE_TOP_ITEM =
             ITEMS.register("stove_top_block",
                     () -> new BlockItem(ModBlocks.STOVE_TOP_BLOCK.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> AUGMENT_TABLE_ITEM =
+            ITEMS.register("augment_table_block",
+                    () -> new BlockItem(ModBlocks.AUGMENT_TABLE_BLOCK.get(), new Item.Properties()));
+
+    //Register Augments
+    public static final RegistryObject<SlowFallingAugment> SLOW_FALLING_AUGMENT = ITEMS.register("slow_falling_augment",
+            () -> new SlowFallingAugment(new Item.Properties()));
 
 
  

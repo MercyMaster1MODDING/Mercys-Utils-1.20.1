@@ -1,5 +1,6 @@
 package com.mercysUtils.library.Blocks;
 
+import com.mercysUtils.library.Blocks.Custom.AugmentTableClass;
 import com.mercysUtils.library.Blocks.Custom.StoveTopClass;
 import com.mercysUtils.library.Blocks.TreeBlocks.ModFlammableRotateablePillar;
 import com.mercysUtils.library.Datagen.Trees.CandyAppleTree;
@@ -174,6 +175,9 @@ public class ModBlocks extends Blocks {
 
     public static final RegistryObject<Block> STOVE_TOP_BLOCK = BLOCKS.register("stove_top_block",
             () -> new StoveTopClass(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+
+    public static final RegistryObject<Block> AUGMENT_TABLE_BLOCK = BLOCKS.register("augment_table_block",
+            () -> new AugmentTableClass(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
 
 

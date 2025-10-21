@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "mercysutils:block/augment_table_block"
+    }
+  }
+}

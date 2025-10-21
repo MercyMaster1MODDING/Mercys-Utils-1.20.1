@@ -13,10 +13,18 @@ public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, MercysUtils.MOD_ID);
 
+
+
     public static final RegistryObject<BlockEntityType<StoveTopEntityClass>> STOVE_TOP_ENTITY_CLASS_BLOCK_ENTITY_TYPE =
             BLOCK_ENTITIES.register("stove_top_block", () ->
                     BlockEntityType.Builder.of(StoveTopEntityClass::new,
                             ModBlocks.STOVE_TOP_BLOCK.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<AugmentTableEntityClass>> AUGMENT_TABLE_ENTITY_CLASS_BLOCK_ENTITY_TYPE =
+            BLOCK_ENTITIES.register("augment_table_block", () -> // use "_entity" suffix conventionally
+                    BlockEntityType.Builder.of(AugmentTableEntityClass::new,
+                            ModBlocks.AUGMENT_TABLE_BLOCK.get()).build(null));
+
 
     public static void register(IEventBus eventBus){
         BLOCK_ENTITIES.register(eventBus);

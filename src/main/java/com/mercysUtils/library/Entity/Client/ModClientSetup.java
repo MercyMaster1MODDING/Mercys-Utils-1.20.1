@@ -5,8 +5,9 @@ import com.mercysUtils.library.Entity.Villagers.CandyMerchant;
 import com.mercysUtils.library.Entity.Villagers.CandyMerchantRenderer;
 import com.mercysUtils.library.MercysUtils;
 import com.mercysUtils.library.Entity.ModEntity;
+import com.mercysUtils.library.Screen.AugmentTableMenuScreen;
 import com.mercysUtils.library.Screen.ModMenuTypes;
-import com.mercysUtils.library.Screen.TutorialBlockEntityWorkstationScreen;
+import com.mercysUtils.library.Screen.StoveTopMenuScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -29,7 +30,8 @@ public class ModClientSetup {
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             // Register custom block entity screens
-            MenuScreens.register(ModMenuTypes.STOVE_TOP_MENU_TYPE.get(), TutorialBlockEntityWorkstationScreen::new);
+            MenuScreens.register(ModMenuTypes.STOVE_TOP_MENU_TYPE.get(), StoveTopMenuScreen::new);
+            MenuScreens.register(ModMenuTypes.AUGMENT_TABLE_MENU_TYPE.get(), AugmentTableMenuScreen::new);
         });
     }
 
