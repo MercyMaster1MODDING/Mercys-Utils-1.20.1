@@ -49,7 +49,7 @@ public class AugmentTableClass extends BaseEntityBlock {
 
     @Nullable
     @Override
-    public BlockEntity newBlockEntity(@NotNull BlockPos blockPos, BlockState blockState) {
+    public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
         return new AugmentTableEntityClass(blockPos, blockState);
     }
 
@@ -78,6 +78,8 @@ public class AugmentTableClass extends BaseEntityBlock {
 
         return InteractionResult.sidedSuccess(level.isClientSide());
     }
+
+
 
 
 }

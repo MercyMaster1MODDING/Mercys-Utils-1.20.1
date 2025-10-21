@@ -163,7 +163,7 @@ public class ModItems {
                     () -> new BlockItem(ModBlocks.STOVE_TOP_BLOCK.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> AUGMENT_TABLE_ITEM =
-            ITEMS.register("augment_table_block_item",
+            ITEMS.register("augment_table_block",
                     () -> new BlockItem(ModBlocks.AUGMENT_TABLE_BLOCK.get(), new Item.Properties()));
 
     //Register Augments
