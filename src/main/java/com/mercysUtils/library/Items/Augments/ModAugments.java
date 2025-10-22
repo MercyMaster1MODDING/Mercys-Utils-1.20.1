@@ -1,8 +1,13 @@
 package com.mercysUtils.library.Items.Augments;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 
 /**
  * Base class for all augments.
@@ -40,4 +45,13 @@ public abstract class ModAugments extends Item {
 
     /** Called every tick if this augment is active on an item. */
     public void onTick(ItemStack toolStack) {}
+
+    public void onInventoryTick(ItemStack stack, Level level, Entity entity, int slot, boolean isSelected) {
+        if (!level.isClientSide && entity instanceof LivingEntity livingEntity) {
+            if (isSelected || slot == 0) { // adjust logic based on your needs
+
+            }
+        }
+    }
+
 }

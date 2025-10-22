@@ -1,23 +1,17 @@
 package com.mercysUtils.library.Items;
 
-import com.mercysUtils.library.Blocks.Entity.ModBlockEntities;
 import com.mercysUtils.library.Blocks.ModBlocks;
 import com.mercysUtils.library.FoodItems.ModFoods;
+import com.mercysUtils.library.Items.Augments.AugmentRegistry;
 import com.mercysUtils.library.Items.Augments.AugmentTypes.SlowFallingAugment;
 import com.mercysUtils.library.MercysUtils;
 import com.mercysUtils.library.MiscRegistries.ModArmorMaterialRegistry;
 import com.mercysUtils.library.tiers.ModTiers;
-import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-
-import java.util.function.Consumer;
 
 public class ModItems {
 

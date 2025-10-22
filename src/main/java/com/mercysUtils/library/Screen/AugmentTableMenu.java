@@ -22,12 +22,12 @@ public class AugmentTableMenu extends AbstractContainerMenu {
     private final ContainerData data;
 
     public AugmentTableMenu(int containerId, Inventory inventory, FriendlyByteBuf byteBuf){
-        this(containerId, inventory, inventory.player.level().getBlockEntity(byteBuf.readBlockPos()), new SimpleContainerData(2));
+        this(containerId, inventory, inventory.player.level().getBlockEntity(byteBuf.readBlockPos()), new SimpleContainerData(3));
     }
 
     public AugmentTableMenu(int containerId, Inventory inventory, BlockEntity entity, ContainerData data){
         super(ModMenuTypes.AUGMENT_TABLE_MENU_TYPE.get(),containerId);
-        checkContainerSize(inventory, 2);
+        checkContainerSize(inventory, 3);
         blockEntity = ((AugmentTableEntityClass) entity);
         this.level = inventory.player.level();
         this.data = data;
@@ -80,7 +80,7 @@ public class AugmentTableMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 2;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 3;  // must be the number of slots you have!
 
     @Override
     public ItemStack quickMoveStack(Player player, int index) {

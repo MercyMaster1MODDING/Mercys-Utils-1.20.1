@@ -1,17 +1,14 @@
 {
   "replace": false,
   "values": [
-    "mercysutils:mercinium_helmet",
     "mercysutils:mercinium_chestplate",
+    "mercysutils:mercinium_helmet",
     "mercysutils:mercinium_leggings",
     "mercysutils:mercinium_boots",
     "mercysutils:mercinium_sword",
     "mercysutils:mercinium_pickaxe",
-    "mercysutils:jellyinium_helmet",
-    "mercysutils:jellyinium_chestplate",
-    "mercysutils:jellyinium_leggings",
-    "mercysutils:jellyinium_boots",
     "mercysutils:jellyinium_sword",
     "mercysutils:jellyinium_pickaxe"
+
   ]
 }
