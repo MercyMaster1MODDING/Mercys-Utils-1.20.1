@@ -7,6 +7,7 @@ import com.mercysUtils.library.Enchantments.ModEnchantments;
 import com.mercysUtils.library.Entity.ModEntity;
 import com.mercysUtils.library.Entity.Villagers.ModVillagers;
 import com.mercysUtils.library.Events.AttackDamageHandler;
+import com.mercysUtils.library.Items.Augments.AugmentRegistry;
 import com.mercysUtils.library.Items.ModItems;
 import com.mercysUtils.library.MiscRegistries.ModCreativeModeTabsRegistry;
 import com.mercysUtils.library.RecipeTypes.ModRecipeRegister;
@@ -72,6 +73,10 @@ public class MercysUtils
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        event.enqueueWork(() -> {
+            // Register your augment here AFTER items are constructed
+            AugmentRegistry.register(ModItems.SLOW_FALLING_AUGMENT.get());
+        });
     }
 
     // Add the example block item to the vanilla ingredients tab
