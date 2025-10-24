@@ -1,10 +1,13 @@
 package com.mercysUtils.library.Events;
 
+import com.mercysUtils.library.Items.Augments.AugmentTypes.DamageAugOne;
 import com.mercysUtils.library.ModDamageTypes.ModDamageTypes;
 import com.mercysUtils.library.Enchantments.ModEnchantments;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Interaction;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
@@ -20,6 +23,8 @@ public class AttackDamageHandler {
 
     @SubscribeEvent
     public static void onAttack(AttackEntityEvent event) {
+
+        float augmentDamageOne = 0f;
         Player player = event.getEntity();
         if (!(player.level() instanceof ServerLevel serverLevel)) return;
         if (!(event.getTarget() instanceof LivingEntity target)) return;
@@ -38,8 +43,19 @@ public class AttackDamageHandler {
             // Calculate base attack damage
             float baseDamage = (float) player.getAttribute(Attributes.ATTACK_DAMAGE).getValue();
 
+            if (weapon.getTag().getBoolean("HasDamageOne")) {
+                augmentDamageOne = 1f; // or whatever your augment value is
+            }
+            else{
+                augmentDamageOne = 0f;
+            }
+
             // Determine how much is true damage (e.g., 50%)
-            float truePart = baseDamage * 2;
+            float truePart = baseDamage + weapon.getEnchantmentLevel(ModEnchantments.SHARPNESS) +
+                    weapon.getEnchantmentLevel(ModEnchantments.ADVANCED_SHARPNESS_ENCHANT.get()) +
+                    augmentDamageOne +
+                    weapon.getEnchantmentLevel(ModEnchantments.BANE_OF_ARTHROPODS) +
+                    weapon.getEnchantmentLevel(ModEnchantments.SMITE);
 
 
             // Normal (armor-reduced) portion
@@ -56,6 +72,15 @@ public class AttackDamageHandler {
             // Optional: action bar message for player
             player.displayClientMessage(
                     Component.literal("§cTrue Damage: §f" + String.format("%.1f", truePart)),
+                    true
+            );
+        }
+
+        if (weapon.getEnchantmentLevel(ModEnchantments.TRUE_DAMAGE_ENCHANTMENT.get()) <= 0){
+
+            float baseDamage = (float) player.getAttribute(Attributes.ATTACK_DAMAGE).getValue();
+            player.displayClientMessage(
+                    Component.literal("§cBase Damage: §f" + String.format("%.1f", baseDamage)),
                     true
             );
         }

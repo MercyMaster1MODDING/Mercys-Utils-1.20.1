@@ -5,6 +5,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -38,7 +39,7 @@ public abstract class ModAugments extends Item {
     // --- Abstract methods that subclasses must implement ---
 
     /** Called when the augment is applied to a tool/armor item. */
-    public abstract void onApply(ItemStack toolStack);
+    public abstract void onApply(ItemStack toolStack, Player player);
 
     /** Called when the augment is removed from a tool/armor item. */
     public abstract void onRemove(ItemStack toolStack);

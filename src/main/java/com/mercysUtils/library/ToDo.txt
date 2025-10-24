@@ -39,4 +39,7 @@ He especially wants the ability to pump air into an airvent and then stand on to
 to instantly fill up a create backtank
 https://www.curseforge.com/minecraft/mc-mods/create-pneumatic-equipment
 
+Minigames like in the 1.12.2 mod LootGames
+https://www.curseforge.com/minecraft/mc-mods/loot-games
+
 

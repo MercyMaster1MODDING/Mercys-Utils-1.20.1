@@ -76,6 +76,7 @@ public class ModCreativeModeTabsRegistry {
 
                         //Augments
                         output.accept(ModItems.SLOW_FALLING_AUGMENT.get());
+                        output.accept(ModItems.DAMAGE_ONE_AUGMENT.get());
 
 
                     })

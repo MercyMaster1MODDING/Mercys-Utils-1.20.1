@@ -12,11 +12,13 @@ import com.mercysUtils.library.Items.ModItems;
 import com.mercysUtils.library.MiscRegistries.ModCreativeModeTabsRegistry;
 import com.mercysUtils.library.RecipeTypes.ModRecipeRegister;
 import com.mercysUtils.library.Screen.ModMenuTypes;
+import com.mercysUtils.library.Titles.IPlayerTitles;
 import com.mercysUtils.library.Worldgen.Biomes.ModBiomes;
 import com.mercysUtils.library.Worldgen.Dimension.CandyDimension;
 import com.mercysUtils.library.Worldgen.Dimension.ModDimension;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -71,13 +73,14 @@ public class MercysUtils
 
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
+    private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             // Register your augment here AFTER items are constructed
             AugmentRegistry.register(ModItems.SLOW_FALLING_AUGMENT.get());
         });
+
     }
+
 
     // Add the example block item to the vanilla ingredients tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)

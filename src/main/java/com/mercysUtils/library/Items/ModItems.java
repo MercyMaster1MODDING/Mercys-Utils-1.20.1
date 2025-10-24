@@ -3,6 +3,7 @@ package com.mercysUtils.library.Items;
 import com.mercysUtils.library.Blocks.ModBlocks;
 import com.mercysUtils.library.FoodItems.ModFoods;
 import com.mercysUtils.library.Items.Augments.AugmentRegistry;
+import com.mercysUtils.library.Items.Augments.AugmentTypes.DamageAugOne;
 import com.mercysUtils.library.Items.Augments.AugmentTypes.SlowFallingAugment;
 import com.mercysUtils.library.MercysUtils;
 import com.mercysUtils.library.MiscRegistries.ModArmorMaterialRegistry;
@@ -163,6 +164,9 @@ public class ModItems {
     //Register Augments
     public static final RegistryObject<SlowFallingAugment> SLOW_FALLING_AUGMENT = ITEMS.register("slow_falling_augment",
             () -> new SlowFallingAugment(new Item.Properties()));
+
+    public static final RegistryObject<DamageAugOne> DAMAGE_ONE_AUGMENT = ITEMS.register("damage_one_augment",
+            () -> new DamageAugOne(new Item.Properties()));
 
 
  

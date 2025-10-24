@@ -1,7 +1,8 @@
 {
   "replace": false,
   "values": [
-    "mercysutils:slow_falling_augment"
+    "mercysutils:slow_falling_augment",
+    "mercysutils:damage_one_augment"
 
   ]
 }

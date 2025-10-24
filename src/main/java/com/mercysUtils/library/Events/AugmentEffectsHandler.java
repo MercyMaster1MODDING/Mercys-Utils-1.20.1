@@ -15,6 +15,8 @@ import com.mercysUtils.library.MercysUtils;
 @Mod.EventBusSubscriber(modid = MercysUtils.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class AugmentEffectsHandler {
 
+    public float augmentDamageOne = 1;
+
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if (event.phase != TickEvent.Phase.END) return;
@@ -25,11 +27,13 @@ public class AugmentEffectsHandler {
         if (player.isSpectator() || player.isCreative()) return;
 
         boolean hasEffect = false;
+        boolean hasDamageOneAug = false;
 
         ItemStack mainHand = player.getMainHandItem();
         if (hasSlowFallingAugment(mainHand)) {
             hasEffect = true;
-        } else {
+        }
+        else {
             for (ItemStack armor : player.getArmorSlots()) {
                 if (hasSlowFallingAugment(armor)) {
                     hasEffect = true;
@@ -47,5 +51,11 @@ public class AugmentEffectsHandler {
         if (!stack.hasTag()) return false;
         CompoundTag tag = stack.getTag();
         return tag.getBoolean("HasSlowFalling");
+    }
+
+    private static boolean hasDamageOneAugment(ItemStack stack) {
+        if (!stack.hasTag()) return false;
+        CompoundTag tag = stack.getTag();
+        return tag.getBoolean("HasDamageOne");
     }
 }

@@ -1,5 +1,6 @@
 package com.mercysUtils.library.Items.Augments.AugmentTypes;
 
+import com.mercysUtils.library.Events.AttackDamageHandler;
 import com.mercysUtils.library.Items.Augments.ModAugments;
 import com.mercysUtils.library.MercysUtils;
 import net.minecraft.nbt.CompoundTag;
@@ -12,18 +13,19 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class SlowFallingAugment extends ModAugments {
-    public SlowFallingAugment(Properties properties) {
-        super(properties, new ResourceLocation(MercysUtils.MOD_ID, "slow_falling_augment"), 1);
+public class DamageAugOne extends ModAugments {
+
+    float augmentDamageOne = 0f;
+
+    public DamageAugOne(Properties properties) {
+        super(properties, new ResourceLocation(MercysUtils.MOD_ID, "damage_augment_tier_one"), 1);
     }
 
     @Override
     public void onApply(ItemStack toolStack, Player player) {
 
         CompoundTag tag = toolStack.getOrCreateTag();
-        tag.putBoolean("HasSlowFalling", true);
-
-
+        tag.putBoolean("HasDamageOne", true);
 
     }
 
@@ -31,7 +33,7 @@ public class SlowFallingAugment extends ModAugments {
     public void onRemove(ItemStack toolStack) {
 
         if (!toolStack.isEmpty()) {
-            toolStack.getOrCreateTag().remove("HasSlowFalling");
+            toolStack.getOrCreateTag().remove("HasDamageOne");
         }
 
     }
@@ -43,8 +45,8 @@ public class SlowFallingAugment extends ModAugments {
         if (!level.isClientSide && entity instanceof LivingEntity livingEntity) {
             CompoundTag tag = stack.getOrCreateTag();
 
-            if (tag.getBoolean("HasSlowFalling")) {
-                livingEntity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 40, 0, true, false));
+            if (tag.getBoolean("HasDamageOne")) {
+                ;
             }
         }
     }
