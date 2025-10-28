@@ -1,13 +1,11 @@
 package com.mercysUtils.library.Entity;
 
 import com.mercysUtils.library.Entity.Custom.StarGolemEntity;
-import com.mercysUtils.library.Entity.Villagers.CandyMerchant;
+import com.mercysUtils.library.Entity.Throwable.ModTridentEntity;
 import com.mercysUtils.library.Entity.Villagers.CandyMerchantEntity;
 import com.mercysUtils.library.MercysUtils;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.entity.animal.AbstractGolem;
-import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -25,6 +23,15 @@ public class ModEntity {
     public static final RegistryObject<EntityType<CandyMerchantEntity>> CANDY_MERCHANT_ENTITY =
             ENTITY_TYPES.register("candy_merchant_entity", () -> EntityType.Builder.of(CandyMerchantEntity::new, MobCategory.CREATURE)
                     .sized(1.4f, 2.7f).build("candy_merchant"));
+
+    public static final RegistryObject<EntityType<ModTridentEntity>> POSEIDONS_TRIDENT_ENTITY =
+            ENTITY_TYPES.register("poseidons_trident",
+                    () -> EntityType.Builder.<ModTridentEntity>of(ModTridentEntity::new, MobCategory.MISC)
+                            .sized(0.5F, 0.5F)
+                            .clientTrackingRange(4)
+                            .updateInterval(20)
+                            .build("poseidons_trident")
+            );
 
 
 

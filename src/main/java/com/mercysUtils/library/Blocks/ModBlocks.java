@@ -1,6 +1,7 @@
 package com.mercysUtils.library.Blocks;
 
 import com.mercysUtils.library.Blocks.Custom.AugmentTableClass;
+import com.mercysUtils.library.Blocks.Custom.Pipes.PipesBlockClass;
 import com.mercysUtils.library.Blocks.Custom.StoveTopClass;
 import com.mercysUtils.library.Blocks.TreeBlocks.ModFlammableRotateablePillar;
 import com.mercysUtils.library.Datagen.Trees.CandyAppleTree;
@@ -178,6 +179,9 @@ public class ModBlocks extends Blocks {
 
     public static final RegistryObject<Block> AUGMENT_TABLE_BLOCK = BLOCKS.register("augment_table_block",
             () -> new AugmentTableClass(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+
+    public static final RegistryObject<Block> PIPE = BLOCKS.register("pipe",
+            () -> new PipesBlockClass(BlockBehaviour.Properties.of().noOcclusion()));
 
 
 

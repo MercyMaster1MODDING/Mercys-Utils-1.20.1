@@ -1,5 +1,6 @@
 package com.mercysUtils.library.Blocks.Entity;
 
+import com.mercysUtils.library.Blocks.Entity.PipesEntity.PipesEntityClass;
 import com.mercysUtils.library.Blocks.ModBlocks;
 import com.mercysUtils.library.MercysUtils;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -24,6 +25,12 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("augment_table_block", () -> // use "_entity" suffix conventionally
                     BlockEntityType.Builder.of(AugmentTableEntityClass::new,
                             ModBlocks.AUGMENT_TABLE_BLOCK.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<PipesEntityClass>> PIPE_BLOCK_ENTITY_TYPE =
+            BLOCK_ENTITIES.register("pipe", () ->
+                    BlockEntityType.Builder.of(PipesEntityClass::new,
+                            ModBlocks.PIPE.get()).build(null));
+
 
 
     public static void register(IEventBus eventBus){

@@ -1,0 +1,41 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"4": "mercysutils:block/pipe_connecting_long"
+	},
+	"elements": [
+		{
+			"from": [1, 10, 5],
+			"to": [15, 16, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 11, 9]},
+			"faces": {
+				"north": {"uv": [0, 0, 7, 3], "texture": "#4"},
+				"east": {"uv": [7, 3, 10, 6], "texture": "#4"},
+				"south": {"uv": [0, 3, 7, 6], "texture": "#4"},
+				"west": {"uv": [7, 6, 10, 9], "texture": "#4"},
+				"up": {"uv": [7, 9, 0, 6], "texture": "#4"},
+				"down": {"uv": [14, 0, 7, 3], "texture": "#4"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, -1.5, 0],
+			"scale": [0.66, 0.7, 0.73]
+		},
+		"thirdperson_lefthand": {
+			"scale": [0.66, 0.7, 0.73]
+		},
+		"firstperson_righthand": {
+			"translation": [-7, -3.25, 0],
+			"scale": [0.96, 0.7, 0.31]
+		},
+		"ground": {
+			"translation": [0, 0, -0.75]
+		},
+		"fixed": {
+			"translation": [0, -4.75, 0]
+		}
+	}
+}

@@ -70,6 +70,7 @@ public class ModCreativeModeTabsRegistry {
                         //Block Entities
                         output.accept(ModBlocks.STOVE_TOP_BLOCK.get());
                         output.accept(ModBlocks.AUGMENT_TABLE_BLOCK.get());
+                        output.accept(ModBlocks.PIPE.get());
 
 //                        Enchantments
 //                        output.accept(ModItems.ADVANCED_SHARPNESS_BOOK.get());

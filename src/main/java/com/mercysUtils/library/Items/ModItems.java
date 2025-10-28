@@ -2,9 +2,9 @@ package com.mercysUtils.library.Items;
 
 import com.mercysUtils.library.Blocks.ModBlocks;
 import com.mercysUtils.library.FoodItems.ModFoods;
-import com.mercysUtils.library.Items.Augments.AugmentRegistry;
 import com.mercysUtils.library.Items.Augments.AugmentTypes.DamageAugOne;
 import com.mercysUtils.library.Items.Augments.AugmentTypes.SlowFallingAugment;
+import com.mercysUtils.library.Items.Tridents.PoseidonsTrident;
 import com.mercysUtils.library.MercysUtils;
 import com.mercysUtils.library.MiscRegistries.ModArmorMaterialRegistry;
 import com.mercysUtils.library.tiers.ModTiers;
@@ -96,8 +96,8 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.CANDY_APPLE_TREE_SAPLING.get(), new Item.Properties()));
 
     //Register Tools
-    public static final RegistryObject<TridentItem> POSEIDONS_TRIDENT = ITEMS.register("poseidons_trident",
-            () -> new ModTridentItem(
+    public static final RegistryObject<PoseidonsTrident> POSEIDONS_TRIDENT = ITEMS.register("poseidons_trident",
+            () -> new PoseidonsTrident(
                     new Item.Properties()));
 
     public static final RegistryObject<SwordItem> MERCINIUM_SWORD = ITEMS.register("mercinium_sword",
@@ -160,6 +160,10 @@ public class ModItems {
     public static final RegistryObject<Item> AUGMENT_TABLE_ITEM =
             ITEMS.register("augment_table_block",
                     () -> new BlockItem(ModBlocks.AUGMENT_TABLE_BLOCK.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> PIPE_ITEM =
+            ITEMS.register("pipe",
+                    () -> new BlockItem(ModBlocks.PIPE.get(), new Item.Properties()));
 
     //Register Augments
     public static final RegistryObject<SlowFallingAugment> SLOW_FALLING_AUGMENT = ITEMS.register("slow_falling_augment",
