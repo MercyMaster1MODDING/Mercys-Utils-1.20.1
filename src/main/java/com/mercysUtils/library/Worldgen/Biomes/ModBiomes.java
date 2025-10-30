@@ -1,24 +1,37 @@
 package com.mercysUtils.library.Worldgen.Biomes;
 
 import com.mercysUtils.library.MercysUtils;
+import com.mercysUtils.library.Sounds.MusicRegistry;
+import com.mercysUtils.library.Sounds.SoundRegistry;
+import net.minecraft.client.sounds.MusicManager;
+import net.minecraft.core.Holder;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstapContext;
-import net.minecraft.data.worldgen.features.VegetationFeatures;
-import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.Music;
+import net.minecraft.sounds.Musics;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class ModBiomes {
+
     public static final ResourceKey<Biome> ELVEN_FOREST = ResourceKey.create(Registries.BIOME,
             new ResourceLocation(MercysUtils.MOD_ID, "elven_forest"));
 
     public static final ResourceKey<Biome> CANDY_FOREST = ResourceKey.create(Registries.BIOME,
             new ResourceLocation(MercysUtils.MOD_ID, "candy_forest"));
+
+
+
 
 
     public static void bootstrap(BootstapContext<Biome> context) {
@@ -34,22 +47,21 @@ public class ModBiomes {
 
     //Elven Forest Biome
     public static Biome elvenForest(BootstapContext<Biome> context) {
+
+        // Lookup for sound registry
+        Holder<SoundEvent> elvenForestSoundHolder =
+                context.lookup(Registries.SOUND_EVENT)
+                        .getOrThrow(SoundRegistry.ELVEN_FOREST_BACKGROUND.getKey());
+
+        Music elvenForestMusic = new Music(elvenForestSoundHolder, 20, 100, true);
+
+        // Biome setup
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
-
-        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 4, 4));
-
-
-
-
         BiomeGenerationSettings.Builder biomeBuilder =
                 new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
-        //we need to follow the same order as vanilla biomes for the BiomeDefaultFeatures
+
         globalOverworldGeneration(biomeBuilder);
-
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.MERCINIUM_APPLE_TREE_PLACED_KEY);
-
-        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
-        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
@@ -57,17 +69,19 @@ public class ModBiomes {
                 .temperature(0.7f)
                 .generationSettings(biomeBuilder.build())
                 .mobSpawnSettings(spawnBuilder.build())
-                .specialEffects((new BiomeSpecialEffects.Builder())
+                .specialEffects(new BiomeSpecialEffects.Builder()
                         .waterColor(0x87CEEB)
                         .waterFogColor(0x87CEEB)
                         .skyColor(0x87CEEB)
-                        .grassColorOverride( 0xdde26a)
+                        .grassColorOverride(0xdde26a)
                         .foliageColorOverride(0xdde26a)
                         .fogColor(0xbdbdbd)
-                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-                        .backgroundMusic(null).build())
+                        .ambientLoopSound(elvenForestSoundHolder)
+                        .backgroundMusic(elvenForestMusic)
+                        .build())
                 .build();
     }
+
 
     //Candy Forest Biome
     public static Biome candyForest(BootstapContext<Biome> context) {

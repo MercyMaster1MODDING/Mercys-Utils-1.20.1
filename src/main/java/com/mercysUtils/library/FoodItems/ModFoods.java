@@ -12,7 +12,7 @@ public class ModFoods extends ModItems {
             .saturationMod(8)
             .effect(() -> new MobEffectInstance(MobEffects.SATURATION, 40), 0.8f).build();
 
-    public static final FoodProperties SUPER_MERCINIUM_APPLE = new FoodProperties.Builder()
+    public static final FoodProperties STAR_STRUCK_APPLE = new FoodProperties.Builder()
             .nutrition(16)
             .saturationMod(16)
             .effect(() -> new MobEffectInstance(MobEffects.SATURATION, 60), 1f).build();

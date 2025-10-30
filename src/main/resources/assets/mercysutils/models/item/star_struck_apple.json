@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mercysutils:item/super_mercinium_apple"
+    "layer0": "mercysutils:item/star_struck_apple"
   }
 }

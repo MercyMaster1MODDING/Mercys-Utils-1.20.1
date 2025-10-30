@@ -2,11 +2,13 @@ package com.mercysUtils.library.Items;
 
 import com.mercysUtils.library.Blocks.ModBlocks;
 import com.mercysUtils.library.FoodItems.ModFoods;
+import com.mercysUtils.library.FoodItems.StarStruckApple;
 import com.mercysUtils.library.Items.Augments.AugmentTypes.DamageAugOne;
 import com.mercysUtils.library.Items.Augments.AugmentTypes.SlowFallingAugment;
 import com.mercysUtils.library.Items.Tridents.PoseidonsTrident;
 import com.mercysUtils.library.MercysUtils;
 import com.mercysUtils.library.MiscRegistries.ModArmorMaterialRegistry;
+import com.mercysUtils.library.Sounds.SoundRegistry;
 import com.mercysUtils.library.tiers.ModTiers;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -62,8 +64,8 @@ public class ModItems {
     //Register FoodItems
     public static final RegistryObject<Item> MERCINIUM_APPLE = ITEMS.register("mercinium_apple",
             () -> new Item(new Item.Properties().food(ModFoods.MERCINIUM_APPLE)));
-    public static final RegistryObject<Item> SUPER_MERCINIUM_APPLE = ITEMS.register("super_mercinium_apple",
-            () -> new Item(new Item.Properties().food(ModFoods.SUPER_MERCINIUM_APPLE)));
+    public static final RegistryObject<Item> STAR_STRUCK_APPLE = ITEMS.register("star_struck_apple",
+            () -> new StarStruckApple(new Item.Properties().food(ModFoods.STAR_STRUCK_APPLE)));
     public static final RegistryObject<Item> JELLO = ITEMS.register("jello",
             () -> new Item(new Item.Properties().food(ModFoods.JELLO)));
     public static final RegistryObject<Item> JELLO_PIE = ITEMS.register("jello_pie",
@@ -171,6 +173,15 @@ public class ModItems {
 
     public static final RegistryObject<DamageAugOne> DAMAGE_ONE_AUGMENT = ITEMS.register("damage_one_augment",
             () -> new DamageAugOne(new Item.Properties()));
+
+    //Register Music Discs
+    public static final RegistryObject<Item> ELVEN_FOREST_MUSIC_DISC = ITEMS.register("elven_forest_music_disc",
+            () -> new RecordItem(
+                    15,
+                    SoundRegistry.ELVEN_FOREST_BACKGROUND,
+                    new Item.Properties().stacksTo(1),
+                    200
+            ));
 
 
  

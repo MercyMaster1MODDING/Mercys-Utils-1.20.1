@@ -11,7 +11,7 @@
     "east=true,west=true,north=false,south=false,up=false,down=false": { "model": "mercysutils:block/pipe_connecting_long", "y": 0 },
     "up=true,down=true,north=false,south=false,east=false,west=false": { "model": "mercysutils:block/pipe_connecting_long", "x": 90 },
 
-    "north=true,east=true,south=false,west=false,up=false,down=false": { "model": "mercysutils:block/pipe_corner", "y": 0 },
+    "north=true,east=true,south=false,west=false,up=false,down=false": { "model": "mercysutils:block/pipe_corner", "x": 90 },
     "east=true,south=true,north=false,west=false,up=false,down=false": { "model": "mercysutils:block/pipe_corner", "y": 90 },
     "south=true,west=true,north=false,east=false,up=false,down=false": { "model": "mercysutils:block/pipe_corner", "y": 180 },
     "west=true,north=true,south=false,east=false,up=false,down=false": { "model": "mercysutils:block/pipe_corner", "y": 270 },

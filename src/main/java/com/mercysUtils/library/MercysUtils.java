@@ -12,6 +12,7 @@ import com.mercysUtils.library.Items.ModItems;
 import com.mercysUtils.library.MiscRegistries.ModCreativeModeTabsRegistry;
 import com.mercysUtils.library.RecipeTypes.ModRecipeRegister;
 import com.mercysUtils.library.Screen.ModMenuTypes;
+import com.mercysUtils.library.Sounds.SoundRegistry;
 import com.mercysUtils.library.Titles.IPlayerTitles;
 import com.mercysUtils.library.Worldgen.Biomes.ModBiomes;
 import com.mercysUtils.library.Worldgen.Dimension.CandyDimension;
@@ -47,6 +48,7 @@ public class MercysUtils
         ModBlockEntities.register(modEventBus);
         ModEntity.register(modEventBus);
         ModVillagers.register(modEventBus);
+        SoundRegistry.register(modEventBus);
         ModEnchantments.ENCHANTMENTS.register(modEventBus);
         ModRecipeRegister.SERIALIZERS.register(modEventBus);
         ModMenuTypes.register(modEventBus);
@@ -54,6 +56,7 @@ public class MercysUtils
         ModDimension.MERCYSDIMENSION.registry();
         CandyDimension.CANDY_DIMENSION.registry();
         ModCreativeModeTabsRegistry.TABS.register(modEventBus);
+
 
 
 

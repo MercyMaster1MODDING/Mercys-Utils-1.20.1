@@ -1,0 +1,12 @@
+{
+  "star_struck_apple": {
+    "sounds": [
+      { "name": "mercysutils:item/star_struck_apple", "stream": false }
+    ]
+  },
+  "music/elven_forest_background": {
+    "sounds": [
+      { "name": "mercysutils:music/elven_forest_background", "stream": true }
+    ]
+  }
+}

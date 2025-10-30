@@ -24,7 +24,10 @@
   "item.mercysutils.jello": "Jell-O",
   "item.mercysutils.jello_pie": "Jell-O Pie",
   "item.mercysutils.mercinium_apple": "Mercinium Apple",
-  "item.mercysutils.super_mercinium_apple": "Mercinium Apple",
+  "item.mercysutils.star_struck_apple": "Star Struck Apple",
+
+  "item.mercysutils.elven_forest_music_disc": "Elven Forest Background Music Disc",
+  "music.mercysutils.music/elven_forest_background": "Elven Forest Background Music",
 
 
   "dimension.mercysutils.overworld": "Overworld",

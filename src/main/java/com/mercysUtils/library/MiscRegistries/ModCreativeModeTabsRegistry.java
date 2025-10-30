@@ -33,8 +33,8 @@ public class ModCreativeModeTabsRegistry {
 
                         output.accept(ModItems.MERCINIUM_INGOT.get());
                         output.accept(ModItems.JELLYINIUM_INGOT.get());
-//                        output.accept(ModBlocks.MERCINIUM_ORE.get());
-//                        output.accept(ModBlocks.JELLYINIUM_ORE.get());
+                        output.accept(ModBlocks.MERCINIUM_ORE.get());
+                        output.accept(ModBlocks.JELLYINIUM_ORE.get());
 
                         //Tools and Weapons
                         output.accept(ModItems.MERCINIUM_SWORD.get());
@@ -57,7 +57,7 @@ public class ModCreativeModeTabsRegistry {
 
                         //Food
                         output.accept(ModItems.MERCINIUM_APPLE.get());
-                        output.accept(ModItems.SUPER_MERCINIUM_APPLE.get());
+                        output.accept(ModItems.STAR_STRUCK_APPLE.get());
                         output.accept(ModItems.JELLO.get());
                         output.accept(ModItems.GELATIN.get());
                         output.accept(ModItems.JELLO_PIE.get());
@@ -79,6 +79,8 @@ public class ModCreativeModeTabsRegistry {
                         output.accept(ModItems.SLOW_FALLING_AUGMENT.get());
                         output.accept(ModItems.DAMAGE_ONE_AUGMENT.get());
 
+                        //Record Discs
+                        output.accept(ModItems.ELVEN_FOREST_MUSIC_DISC.get());
 
                     })
                     .build());
