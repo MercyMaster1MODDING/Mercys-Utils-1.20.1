@@ -180,7 +180,7 @@ public class ModItems {
                     15,
                     SoundRegistry.ELVEN_FOREST_BACKGROUND,
                     new Item.Properties().stacksTo(1),
-                    200
+                    1200
             ));
 
 
