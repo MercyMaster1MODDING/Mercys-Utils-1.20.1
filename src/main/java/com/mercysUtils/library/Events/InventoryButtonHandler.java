@@ -1,20 +1,16 @@
 package com.mercysUtils.library.Events;
 
-import com.mercysUtils.library.Client.InventorySorter;
 import com.mercysUtils.library.Client.InventorySorter.SortMode;
 import com.mercysUtils.library.Packets.InventorySortPacket;
-import com.mercysUtils.library.Packets.NetworkHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.InventoryScreen;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import org.apache.logging.log4j.core.jmx.Server;
 
 @Mod.EventBusSubscriber(value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class InventoryButtonHandler {
@@ -30,7 +26,7 @@ public class InventoryButtonHandler {
 
             InventoryButtonHandler handler = new InventoryButtonHandler(); // Create an instance
 
-            int x = invScreen.getGuiLeft() + invScreen.getXSize() - 50;
+            int x = invScreen.getGuiLeft() + invScreen.getXSize() - 30;
             int y = invScreen.getGuiTop() + 65;
 
             Button sortButton = Button.builder(
@@ -44,7 +40,7 @@ public class InventoryButtonHandler {
                         NetworkHandler.CHANNEL.sendToServer(new InventorySortPacket(next));
 
                     }
-            ).pos(x, y).size(40, 15).build();
+            ).pos(x, y).size(25, 15).build();
 
             event.addListener(sortButton);
         }
