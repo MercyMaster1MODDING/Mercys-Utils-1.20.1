@@ -10,6 +10,7 @@ import com.mercysUtils.library.Events.AttackDamageHandler;
 import com.mercysUtils.library.Items.Augments.AugmentRegistry;
 import com.mercysUtils.library.Items.ModItems;
 import com.mercysUtils.library.MiscRegistries.ModCreativeModeTabsRegistry;
+import com.mercysUtils.library.Packets.NetworkHandler;
 import com.mercysUtils.library.RecipeTypes.ModRecipeRegister;
 import com.mercysUtils.library.Screen.ModMenuTypes;
 import com.mercysUtils.library.Sounds.SoundRegistry;
@@ -66,6 +67,8 @@ public class MercysUtils
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+        NetworkHandler.register();
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
