@@ -7,18 +7,22 @@ import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 
 public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> MERCINIUM_APPLE_TREE_KEY = registerKey("mercinium_apple_tree_key");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DENSE_MERCINIUM_APPLE_TREE_KEY = registerKey("dense_mercinium_apple_tree_key");
     public static final ResourceKey<ConfiguredFeature<?, ?>> CANDY_APPLE_TREE_KEY = registerKey("jellyinium_apple_tree_key");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context){
@@ -28,9 +32,20 @@ public class ModConfiguredFeatures {
                 new StraightTrunkPlacer(2, 2, 2),
 
                 BlockStateProvider.simple(ModBlocks.MERCINIUM_APPLE_TREE_LEAVES.get()),
-                new FancyFoliagePlacer(ConstantInt.of(3), ConstantInt.of(1), 2),
+                new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2),
 
                 new TwoLayersFeatureSize(1, 0, 2)).build());
+
+        register(context, DENSE_MERCINIUM_APPLE_TREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.MERCINIUM_APPLE_TREE_LOG.get()),
+                new DarkOakTrunkPlacer(10, 0, 0),
+
+                BlockStateProvider.simple(ModBlocks.MERCINIUM_APPLE_TREE_LEAVES.get().defaultBlockState()
+                        .setValue(LeavesBlock.PERSISTENT, false)
+                        .setValue(LeavesBlock.DISTANCE, 2)),
+                new DarkOakFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0)),
+
+                new TwoLayersFeatureSize(1, 0, 1)).build());
 
         register(context, CANDY_APPLE_TREE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.CANDY_APPLE_TREE_LOG.get()),

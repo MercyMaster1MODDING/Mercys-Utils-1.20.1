@@ -8,5 +8,10 @@
     "sounds": [
       { "name": "mercysutils:music/elven_forest_background", "stream": true }
     ]
+  },
+  "music/elven_forest_background_two": {
+    "sounds": [
+      { "name": "mercysutils:music/elven_forest_background_two", "stream": true }
+    ]
   }
 }

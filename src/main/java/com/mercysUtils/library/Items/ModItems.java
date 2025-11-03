@@ -183,6 +183,14 @@ public class ModItems {
                     1200
             ));
 
+    public static final RegistryObject<Item> ELVEN_FOREST_MUSIC_DISC_TWO = ITEMS.register("elven_forest_music_disc_two",
+            () -> new RecordItem(
+                    15,
+                    SoundRegistry.ELVEN_FOREST_BACKGROUND_TWO,
+                    new Item.Properties().stacksTo(1),
+                    1200
+            ));
+
 
  
     public static void register(IEventBus eventBus) {

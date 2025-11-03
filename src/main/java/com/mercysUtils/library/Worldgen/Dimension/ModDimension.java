@@ -69,7 +69,18 @@ public class ModDimension {
                                                 0.0F,
                                                 0.0F,
                                                 0.0F),
-                                        biomeRegistry.getOrThrow(ModBiomes.ELVEN_FOREST))
+                                        biomeRegistry.getOrThrow(ModBiomes.ELVEN_FOREST)),
+                                Pair.of(
+                                        Climate.parameters(
+                                                0.5F,
+                                                0.8F,
+                                                0.2F,
+                                                1.0F,
+                                                0.0F,
+                                                0.0F,
+                                                0.0F),
+                                        biomeRegistry.getOrThrow(ModBiomes.DENSE_ELVEN_FOREST))
+
 
 //                                Pair.of(
 //                                        Climate.parameters(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F), biomeRegistry.getOrThrow(Biomes.BIRCH_FOREST))

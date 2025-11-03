@@ -27,6 +27,9 @@ public class ModBiomes {
     public static final ResourceKey<Biome> ELVEN_FOREST = ResourceKey.create(Registries.BIOME,
             new ResourceLocation(MercysUtils.MOD_ID, "elven_forest"));
 
+    public static final ResourceKey<Biome> DENSE_ELVEN_FOREST = ResourceKey.create(Registries.BIOME,
+            new ResourceLocation(MercysUtils.MOD_ID, "dense_elven_forest"));
+
     public static final ResourceKey<Biome> CANDY_FOREST = ResourceKey.create(Registries.BIOME,
             new ResourceLocation(MercysUtils.MOD_ID, "candy_forest"));
 
@@ -36,6 +39,7 @@ public class ModBiomes {
 
     public static void bootstrap(BootstapContext<Biome> context) {
         context.register(ModBiomes.ELVEN_FOREST, elvenForest(context));
+        context.register(ModBiomes.DENSE_ELVEN_FOREST, denseElvenForest(context));
         context.register(ModBiomes.CANDY_FOREST, candyForest(context));
     }
 
@@ -78,6 +82,42 @@ public class ModBiomes {
                         .fogColor(0xbdbdbd)
                         .ambientLoopSound(elvenForestSoundHolder)
                         .backgroundMusic(elvenForestMusic)
+                        .build())
+                .build();
+    }
+
+    public static Biome denseElvenForest(BootstapContext<Biome> context) {
+
+        // Lookup for sound registry
+        Holder<SoundEvent> elvenForestTwoSoundHolder =
+                context.lookup(Registries.SOUND_EVENT)
+                        .getOrThrow(SoundRegistry.ELVEN_FOREST_BACKGROUND_TWO.getKey());
+
+        Music elvenForestTwoMusic = new Music(elvenForestTwoSoundHolder, 20, 100, true);
+
+        // Biome setup
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+        globalOverworldGeneration(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModPlacedFeatures.DENSE_MERCINIUM_APPLE_TREE_PLACED_KEY);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .downfall(0.8f)
+                .temperature(0.7f)
+                .generationSettings(biomeBuilder.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .specialEffects(new BiomeSpecialEffects.Builder()
+                        .waterColor(0x87CEEB)
+                        .waterFogColor(0x87CEEB)
+                        .skyColor(0x87CEEB)
+                        .grassColorOverride(0xdde26a)
+                        .foliageColorOverride(0xdde26a)
+                        .fogColor(0xbdbdbd)
+                        .ambientLoopSound(elvenForestTwoSoundHolder)
+                        .backgroundMusic(elvenForestTwoMusic)
                         .build())
                 .build();
     }

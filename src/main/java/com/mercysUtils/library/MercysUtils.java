@@ -51,7 +51,6 @@ public class MercysUtils
         ModEnchantments.ENCHANTMENTS.register(modEventBus);
         ModRecipeRegister.SERIALIZERS.register(modEventBus);
         ModMenuTypes.register(modEventBus);
-        ModBiomes.ELVEN_FOREST.registry();
         ModDimension.MERCYSDIMENSION.registry();
         CandyDimension.CANDY_DIMENSION.registry();
         ModCreativeModeTabsRegistry.TABS.register(modEventBus);

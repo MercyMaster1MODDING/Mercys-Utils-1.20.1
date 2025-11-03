@@ -20,6 +20,11 @@ public class SoundRegistry {
             SOUND_EVENTS.register("music/elven_forest_background",
                     () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(MercysUtils.MOD_ID, "music/elven_forest_background")));
 
+    public static final RegistryObject<SoundEvent> ELVEN_FOREST_BACKGROUND_TWO =
+            SOUND_EVENTS.register("music/elven_forest_background_two",
+                    () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(MercysUtils.MOD_ID, "music/elven_forest_background_two")));
+
+
 
     public static void register(IEventBus eventBus) {
         SOUND_EVENTS.register(eventBus);
