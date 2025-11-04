@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "mercysutils:elven_forest_music_disc"
+    "mercysutils:elven_forest_music_disc",
+    "mercysutils:elven_forest_music_disc_two"
   ]
 }

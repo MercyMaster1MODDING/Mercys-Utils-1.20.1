@@ -25,7 +25,7 @@ public class ModDimension {
     public static final ResourceKey<LevelStem> MERCYSDIMENSION = ResourceKey.create(Registries.LEVEL_STEM,
             new ResourceLocation(MercysUtils.MOD_ID, "mercys_dimension"));
     public static final ResourceKey<Level> MERCYS_DIMENSION_LEVEL_KEY = ResourceKey.create(Registries.DIMENSION,
-            new ResourceLocation(MercysUtils.MOD_ID, "mercys_dimension_level_key"));
+            new ResourceLocation(MercysUtils.MOD_ID, "mercys_dimension"));
     public static final ResourceKey<DimensionType> MERCYS_DIMENSION_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE,
             new ResourceLocation(MercysUtils.MOD_ID, "mercys_dimension_type"));
 

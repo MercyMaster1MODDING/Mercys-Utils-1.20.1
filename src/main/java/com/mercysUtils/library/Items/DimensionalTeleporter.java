@@ -4,6 +4,7 @@ import com.mercysUtils.library.Worldgen.Dimension.CandyDimension;
 import com.mercysUtils.library.Worldgen.Dimension.ModDimension;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -37,26 +38,28 @@ public class DimensionalTeleporter extends Item {
     // Available dimensions for this teleporter
     public static List<String> getAvailableDimensions(ItemStack stack) {
         return List.of(
-                ModDimension.MERCYS_DIMENSION_LEVEL_KEY.location().toString(),
+                "mercysutils:mercys_dimension",
                 "minecraft:overworld",
-                CandyDimension.CANDY_DIMENSION_LEVEL_KEY.location().toString()
+                "mercysutils:candy_dimension"
         );
     }
 
     public static String getSelectedDimension(ItemStack stack) {
         List<String> dims = getAvailableDimensions(stack);
         int index = getSelectedIndex(stack);
-        return dims.get(Math.max(0, Math.min(index, dims.size() - 1)));
+        index = Math.max(0, Math.min(index, dims.size() - 1));
+        return dims.get(index);
     }
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         if (!level.isClientSide && player instanceof ServerPlayer serverPlayer) {
             ItemStack stack = player.getItemInHand(hand);
-            String dim = getSelectedDimension(stack);
+            String dimensionId = getSelectedDimension(stack);
+
 
             ServerLevel targetLevel;
-            switch (dim) {
+            switch (dimensionId) {
                 case "minecraft:overworld" -> targetLevel = serverPlayer.getServer().getLevel(Level.OVERWORLD);
                 case "mercysutils:candy_dimension" -> targetLevel = serverPlayer.getServer().getLevel(CandyDimension.CANDY_DIMENSION_LEVEL_KEY);
                 case "mercysutils:mercys_dimension" -> targetLevel = serverPlayer.getServer().getLevel(ModDimension.MERCYS_DIMENSION_LEVEL_KEY);
@@ -66,12 +69,21 @@ public class DimensionalTeleporter extends Item {
                 }
             }
 
-            if (targetLevel == serverPlayer.level()) {
+            ResourceKey<Level> currentKey = serverPlayer.level().dimension();
+            ResourceKey<Level> targetKey = targetLevel.dimension();
+
+            System.out.println("Current: " + serverPlayer.level().dimension().location());
+            System.out.println("Target: " + targetLevel.dimension().location());
+
+
+            if (currentKey == targetKey) {
                 player.displayClientMessage(Component.literal("§cYou are already in this dimension!"), true);
                 return InteractionResultHolder.fail(stack);
             }
 
+
             teleportPlayer(serverPlayer, targetLevel);
+
         }
 
         return InteractionResultHolder.sidedSuccess(player.getItemInHand(hand), level.isClientSide());

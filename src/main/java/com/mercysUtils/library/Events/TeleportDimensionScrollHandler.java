@@ -1,6 +1,7 @@
 package com.mercysUtils.library.Events;
 
 import com.mercysUtils.library.Items.DimensionalTeleporter;
+import com.mercysUtils.library.Packets.TeleporterScrollPacket;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.world.item.ItemStack;
@@ -31,6 +32,12 @@ public class TeleportDimensionScrollHandler {
         // Update selected index with wrap-around
         currentIndex = (currentIndex + delta + size) % size;
         DimensionalTeleporter.setSelectedIndex(stack, currentIndex);
+
+        NetworkHandler.CHANNEL.sendToServer(new TeleporterScrollPacket(currentIndex));
+
+
+        String selectedDim = DimensionalTeleporter.getSelectedDimension(stack);
+
 
         // Cancel the event so it doesn’t scroll the hotbar
         event.setCanceled(true);

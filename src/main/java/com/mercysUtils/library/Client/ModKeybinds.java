@@ -6,6 +6,7 @@ import net.minecraft.client.KeyMapping;
 import net.minecraft.world.item.SpyglassItem;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.checkerframework.checker.units.qual.A;
