@@ -66,7 +66,8 @@ public class InventoryButtonHandler {
             }
             else if (chestContainer.getContainerSize() >= 54) { // only double chests
                 int x = containerScreen.getGuiLeft() + containerScreen.getXSize() - 30;
-                int y = containerScreen.getGuiTop() + 125;
+                int y = containerScreen.getGuiTop();
+                        //+ 125;
 
                 Button sortButton = Button.builder(
                         Component.literal("Sort"),

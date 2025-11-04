@@ -41,7 +41,7 @@ public class ModConfiguredFeatures {
                 new DarkOakTrunkPlacer(10, 0, 0),
 
                 BlockStateProvider.simple(ModBlocks.MERCINIUM_APPLE_TREE_LEAVES.get().defaultBlockState()
-                        .setValue(LeavesBlock.PERSISTENT, false)
+                        .setValue(LeavesBlock.PERSISTENT, true)
                         .setValue(LeavesBlock.DISTANCE, 2)),
                 new DarkOakFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0)),
 

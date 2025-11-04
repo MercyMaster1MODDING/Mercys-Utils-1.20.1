@@ -48,6 +48,9 @@
   "block.mercysutils.mercinium_ore": "Mercinium Ore",
   "block.mercysutils.jellyinium_ore": "Jellyinium Ore",
 
-  "mercysutils.mercys_utils_tab": "Mercy's Utils"
+  "mercysutils.mercys_utils_tab": "Mercy's Utils",
+
+  "key.categories.mercysutils": "Mercy's Utils",
+  "key.mercysutils.zoom": "Fast Zoom"
 
 }

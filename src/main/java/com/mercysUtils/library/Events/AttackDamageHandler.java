@@ -70,22 +70,22 @@ public class AttackDamageHandler {
 //                5, 0.2, 0.2, 0.2, 0.01);
 
             // Optional: action bar message for player
-            player.displayClientMessage(
-                    Component.literal("§cTrue Damage: §f" + String.format("%.1f", truePart)),
-                    true
-            );
+//            player.displayClientMessage(
+//                    Component.literal("§cTrue Damage: §f" + String.format("%.1f", truePart)),
+//                    true
+//            );
         }
 
-        if (weapon.getEnchantmentLevel(ModEnchantments.TRUE_DAMAGE_ENCHANTMENT.get()) <= 0){
-
-            float baseDamage = (float) player.getAttribute(Attributes.ATTACK_DAMAGE).getValue();
-            player.displayClientMessage(
-                    Component.literal("§cBase Damage: §f" + String.format("%.1f", baseDamage)),
-                    true
-            );
-        }
-        else {
-            return;
-        }
+//        if (weapon.getEnchantmentLevel(ModEnchantments.TRUE_DAMAGE_ENCHANTMENT.get()) <= 0){
+//
+//            float baseDamage = (float) player.getAttribute(Attributes.ATTACK_DAMAGE).getValue();
+//            player.displayClientMessage(
+//                    Component.literal("§cBase Damage: §f" + String.format("%.1f", baseDamage)),
+//                    true
+//            );
+//        }
+//        else {
+//            return;
+//        }
     }
 }
